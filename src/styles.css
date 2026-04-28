@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background: #fafaf7;
+    color: #151512;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: #cbb987;
+    color: #151512;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply text-sm font-medium text-graphite-100/70 transition hover:text-champagne-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-champagne-400;
+  }
+
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.24em] text-olive-700;
+  }
+
+  .section-pad {
+    @apply py-20 sm:py-24 lg:py-32;
+  }
+
+  .service-card {
+    @apply border border-graphite-950/10 bg-white p-6 shadow-[0_18px_50px_rgba(21,21,18,0.06)] transition duration-300 hover:-translate-y-1 hover:border-olive-700/30 sm:p-7;
+  }
+
+  .metric {
+    @apply font-display text-xl font-semibold text-champagne-400 sm:text-2xl;
+  }
+
+  .process-row {
+    @apply grid grid-cols-[3.5rem_1fr] gap-4 border border-graphite-100/10 bg-graphite-900/70 p-5 text-base leading-7 text-graphite-100/75 sm:grid-cols-[4.5rem_1fr] sm:gap-5 sm:p-6 sm:text-lg sm:leading-8;
+  }
+
+  .process-index {
+    @apply font-display text-xs font-semibold tracking-[0.18em] text-champagne-400 sm:text-sm sm:tracking-[0.22em];
+  }
+
+  .audience-row {
+    @apply flex gap-4 border border-graphite-950/10 bg-white/70 p-5 text-base leading-7 text-graphite-800 shadow-[0_16px_45px_rgba(21,21,18,0.05)] sm:p-6 sm:text-lg sm:leading-8;
+  }
+
+  .contact-link {
+    @apply flex min-w-0 items-center gap-3 border-b border-graphite-950/10 py-3 font-medium transition hover:text-olive-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive-700;
+  }
+
+  .field {
+    @apply grid min-w-0 gap-2 text-sm font-semibold text-graphite-800;
+  }
+
+  .field input,
+  .field textarea {
+    @apply w-full min-w-0 border border-graphite-950/10 bg-stone-50 px-4 py-3 font-normal text-graphite-950 outline-none transition placeholder:text-graphite-700/40 focus:border-olive-700 focus:ring-2 focus:ring-olive-700/20;
+  }
+}
+
+.hero-lines {
+  background:
+    linear-gradient(90deg, rgba(203, 185, 135, 0.08) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(239, 238, 231, 0.06) 1px, transparent 1px);
+  background-size: 88px 88px;
+}
+
+.architectural-grid {
+  background:
+    linear-gradient(90deg, rgba(203, 185, 135, 0.12) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(239, 238, 231, 0.1) 1px, transparent 1px),
+    radial-gradient(circle at 70% 18%, rgba(108, 123, 74, 0.38), transparent 32%);
+  background-size: 56px 56px, 56px 56px, auto;
+}
