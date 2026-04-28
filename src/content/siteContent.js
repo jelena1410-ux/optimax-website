@@ -29,10 +29,12 @@ export const siteContent = {
     title: 'Gradimo poslovne sustave koji uvode red, preglednost i mjerljive rezultate.',
     text: 'Partner za poslovnu arhitekturu, operativnu jasnoću i upravljački ritam koji pomaže vodstvu donositi mirnije, preciznije odluke.',
     visual: {
-      label: 'Struktura',
+      label: 'STRUKTURA',
+      structureItems: ['Procesi', 'Organizacija', 'Sustavi'],
       step: '01',
       stepText: 'Dijagnostika',
       result: 'Mjerljivi rezultati',
+      resultItems: ['KPI pokazatelji', 'Učinkovitost', 'Kontrola troška'],
     },
   },
 

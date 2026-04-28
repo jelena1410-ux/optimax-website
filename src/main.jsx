@@ -132,7 +132,12 @@ function HeroGraphic() {
       <div className="relative grid h-full min-h-[430px] grid-cols-6 grid-rows-6 gap-4 p-5 sm:min-h-[520px] sm:p-7 lg:min-h-[640px] lg:gap-5">
         <div className="col-span-4 row-span-3 border border-champagne-400/35 bg-graphite-950/40 p-6 shadow-[0_24px_60px_rgba(0,0,0,0.22)] backdrop-blur-md">
           <p className="text-xs uppercase tracking-[0.26em] text-champagne-400">{visual.label}</p>
-          <div className="mt-12 h-px max-w-[58%] bg-champagne-400/40" />
+          <div className="mt-10 h-px max-w-[58%] bg-champagne-400/40" />
+          <ul className="mt-6 space-y-2 text-sm leading-6 text-graphite-100/68">
+            {visual.structureItems.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
         </div>
         <div className="col-span-2 row-span-4 flex flex-col justify-between border border-graphite-100/20 bg-graphite-950/35 p-6 backdrop-blur-md">
           <Compass className="text-champagne-400" size={28} />
@@ -143,10 +148,13 @@ function HeroGraphic() {
         </div>
         <div className="col-span-5 row-span-2 border border-olive-600/45 bg-olive-900/55 p-6 shadow-[0_24px_70px_rgba(0,0,0,0.24)] backdrop-blur-md">
           <p className="metric">{visual.result}</p>
-          <div className="mt-10 max-w-[72%] space-y-3">
-            <span className="block h-px bg-champagne-400/45" />
-            <span className="block h-px w-2/3 bg-graphite-100/25" />
-          </div>
+          <ul className="mt-6 grid max-w-[78%] gap-2 text-sm leading-6 text-graphite-100/70 sm:grid-cols-3 sm:gap-4">
+            {visual.resultItems.map((item) => (
+              <li key={item} className="border-t border-champagne-400/25 pt-3">
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
         <div className="col-span-1 row-span-2 border border-champagne-400/25 bg-champagne-400/10 backdrop-blur-sm" />
       </div>
