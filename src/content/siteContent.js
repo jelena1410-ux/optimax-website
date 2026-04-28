@@ -27,7 +27,7 @@ export const siteContent = {
   hero: {
     eyebrow: 'OptiMAX Consulting',
     title: 'Gradimo poslovne sustave koji uvode red, preglednost i mjerljive rezultate.',
-    text: 'Partner za poslovnu arhitekturu, operativnu jasnoću i upravljački ritam koji pomaže vodstvu donositi mirnije, preciznije odluke.',
+    text: 'Partner za poslovnu arhitekturu, operativnu jasnoću i upravljački ritam koji pomaže donositi mirnije, preciznije odluke.',
     visual: {
       label: 'STRUKTURA',
       structureItems: ['Procesi', 'Organizacija', 'Sustavi'],
@@ -40,8 +40,8 @@ export const siteContent = {
 
   services: {
     eyebrow: 'Usluge',
-    title: 'Sustavi koji poslovanje čine upravljivim.',
-    text: 'Radimo na mjestima gdje organizacija treba više reda, manje operativne magle i jasniju vezu između odluke, provedbe i rezultata.',
+    title: 'Sustavi koji poslovanje čine jednostavnijim.',
+    text: 'Radimo na mjestima gdje organizacija treba više reda i jasniju vezu između odluke, provedbe i rezultata.',
     items: [
       {
         icon: 'layers',
@@ -126,9 +126,9 @@ export const siteContent = {
     title: 'Dogovorite poslovnu dijagnostiku.',
     text: 'Kratak inicijalni razgovor dovoljan je za razumijevanje trenutačnog konteksta i procjenu gdje OptiMAX Consulting može stvoriti najveću vrijednost.',
     email: 'kontakt@optimax-consulting.hr',
-    phone: '+385 00 000 000',
-    phoneHref: 'tel:+385000000000',
-    location: 'Hrvatska',
+    phone: '+385 98 501 011',
+    phoneHref: 'tel:+385 98 501 011',
+    location: 'Rijeka, Hrvatska',
     form: {
       subject: 'Poslovna dijagnostika',
       fields: {
