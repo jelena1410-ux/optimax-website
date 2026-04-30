@@ -27,7 +27,7 @@
 
 @layer components {
   .nav-link {
-    @apply relative text-[0.96rem] font-medium text-graphite-100/75 transition duration-300 hover:text-champagne-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-champagne-400;
+    @apply relative text-[0.95rem] font-normal text-graphite-100/70 transition duration-300 hover:text-champagne-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-champagne-400;
   }
 
   .eyebrow {
@@ -40,6 +40,46 @@
 
   .service-card {
     @apply relative overflow-hidden border border-graphite-950/10 bg-white/90 p-7 shadow-[0_18px_50px_rgba(21,21,18,0.06)] transition duration-500 hover:-translate-y-2 hover:border-champagne-400/45 hover:shadow-[0_30px_90px_rgba(21,21,18,0.14)] sm:p-8;
+  }
+
+  .hero-service-card {
+    @apply relative overflow-hidden border border-graphite-100/10 bg-graphite-900/80 p-7 shadow-[0_20px_70px_rgba(0,0,0,0.2)] transition duration-500 hover:-translate-y-1 hover:border-olive-600/45 hover:bg-graphite-900 sm:p-8;
+  }
+
+  .before-after-card {
+    @apply relative overflow-hidden border border-graphite-100/15 bg-graphite-950/60 p-6 shadow-[0_26px_70px_rgba(0,0,0,0.2)] backdrop-blur-md transition duration-500 sm:p-7;
+  }
+
+  .before-after-card-positive {
+    @apply border-olive-600/45 bg-olive-900/45;
+  }
+
+  .principle-card {
+    @apply border border-graphite-950/10 bg-white/80 p-7 shadow-[0_16px_48px_rgba(21,21,18,0.055)] transition duration-300 hover:border-olive-700/25 hover:bg-white hover:shadow-[0_24px_70px_rgba(21,21,18,0.1)];
+  }
+
+  .about-principle {
+    @apply border border-graphite-100/10 bg-graphite-900/80 px-6 py-5 font-display text-xl font-semibold text-graphite-100 shadow-[0_18px_55px_rgba(0,0,0,0.18)];
+  }
+
+  .signal-panel {
+    @apply border border-graphite-950/10 bg-white/80 p-7 shadow-[0_20px_70px_rgba(21,21,18,0.08)] sm:p-9;
+  }
+
+  .signal-panel-dark {
+    @apply border-graphite-100/10 bg-graphite-950 text-graphite-100;
+  }
+
+  .compact-row {
+    @apply flex items-start gap-3 border border-graphite-950/10 bg-stone-50/80 p-4 text-sm font-medium leading-6 text-graphite-800;
+  }
+
+  .compact-row svg {
+    @apply mt-0.5 shrink-0 text-olive-700;
+  }
+
+  .result-pill {
+    @apply border border-graphite-100/10 bg-graphite-900 px-4 py-4 text-sm font-semibold leading-6 text-graphite-100/80;
   }
 
   .metric {
@@ -79,7 +119,7 @@
   left: 0;
   height: 1px;
   content: '';
-  background: linear-gradient(90deg, transparent, rgba(203, 185, 135, 0.88), transparent);
+  background: linear-gradient(90deg, transparent, rgba(108, 123, 74, 0.78), rgba(203, 185, 135, 0.82), transparent);
   opacity: 0;
   transform: scaleX(0.32) translateY(2px);
   transition: opacity 320ms ease, transform 320ms ease;
@@ -97,7 +137,7 @@
   width: 3px;
   height: 3px;
   content: '';
-  background: #cbb987;
+  background: #6c7b4a;
   border-radius: 999px;
   opacity: 0;
   transform: translateX(-0.35rem);
@@ -111,19 +151,32 @@
 
 .premium-button,
 .premium-submit {
-  box-shadow: 0 16px 44px rgba(203, 185, 135, 0.18);
+  box-shadow: 0 16px 44px rgba(203, 185, 135, 0.16);
+}
+
+.header-cta {
+  border: 1px solid rgba(203, 185, 135, 0.36);
+  box-shadow: 0 10px 30px rgba(203, 185, 135, 0);
 }
 
 .premium-button:hover {
   background: #d2c291;
   transform: translateY(-2px);
-  box-shadow: 0 22px 58px rgba(203, 185, 135, 0.25);
+  box-shadow: 0 0 0 1px rgba(203, 185, 135, 0.18), 0 24px 68px rgba(203, 185, 135, 0.28);
+}
+
+.header-cta:hover {
+  border-color: rgba(203, 185, 135, 0.72);
+  background: rgba(203, 185, 135, 0.08);
+  color: #efe6c4;
+  box-shadow: 0 0 28px rgba(203, 185, 135, 0.14);
 }
 
 .premium-button-secondary:hover {
   border-color: rgba(203, 185, 135, 0.78);
   background: rgba(239, 238, 231, 0.055);
   transform: translateY(-2px);
+  box-shadow: 0 0 34px rgba(203, 185, 135, 0.12);
 }
 
 .premium-submit:hover {
@@ -159,6 +212,18 @@
 .service-card:hover::after {
   opacity: 1;
   transform: translate(-10%, -8%);
+}
+
+.hero-service-card::before,
+.before-after-card::before,
+.principle-card::before {
+  position: absolute;
+  top: 0;
+  right: 1.5rem;
+  left: 1.5rem;
+  height: 1px;
+  content: '';
+  background: linear-gradient(90deg, transparent, rgba(108, 123, 74, 0.7), rgba(203, 185, 135, 0.48), transparent);
 }
 
 .hero-visual {
