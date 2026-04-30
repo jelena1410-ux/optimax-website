@@ -166,7 +166,7 @@ export const siteContent = {
     title: 'Poslovni sustavi ne nastaju slučajno. Oni se grade.',
     paragraphs: [
       'OptiMAX Consulting okuplja stručnjake usmjerene na uvođenje reda, jasnoće i mjerljivosti u poslovanje.',
-      'Radimo s tvrtkama koje žele bolje razumjeti svoje procese, jasnije definirati odgovornosti i donositi odluke na temelje pouzdanih podataka.',
+      'Radimo s tvrtkama koje žele bolje razumjeti svoje procese, jasnije definirati odgovornosti i donositi odluke na temelju pouzdanih podataka.',
     ],
     highlights: ['sustav > improvizacija', 'jasnoća > kompleksnost', 'praksa > teorija'],
     closing: 'Problem najčešće nije u ljudima, nego u sustavu.',
@@ -251,9 +251,9 @@ export const siteContent = {
     title: 'Dogovorite poslovnu dijagnostiku',
     text: 'Pošaljite kratku poruku i otvorit ćemo razgovor o tome gdje sustav može donijeti najviše jasnoće.',
     email: 'kontakt@optimax-consulting.hr',
-    phone: '+385 00 000 000',
-    phoneHref: 'tel:+385000000000',
-    location: 'Hrvatska',
+    phone: '+385 98 501 011',
+    phoneHref: 'tel:+38598501011',
+    location: 'Rijeka, Hrvatska',
     form: {
       subject: 'Poslovna dijagnostika',
       fields: {
