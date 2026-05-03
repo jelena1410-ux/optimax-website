@@ -12,9 +12,9 @@
   body {
     margin: 0;
     background:
-      radial-gradient(circle at 18% -8%, rgba(203, 185, 135, 0.16), transparent 34rem),
-      linear-gradient(180deg, #151512 0, #151512 28rem, #ede9dd 54rem),
-      #ede9dd;
+      radial-gradient(circle at 18% -8%, rgba(203, 185, 135, 0.14), transparent 30rem),
+      linear-gradient(180deg, #151512 0, #151512 24rem, #e9e5d8 49rem),
+      #e9e5d8;
     color: #151512;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -36,15 +36,15 @@
   }
 
   .section-pad {
-    @apply py-28 sm:py-36 lg:py-44;
+    @apply py-20 sm:py-24 lg:py-32;
   }
 
   .service-card {
-    @apply relative overflow-hidden border border-graphite-950/10 bg-[#f8f5ec]/95 p-9 shadow-[0_24px_72px_rgba(21,21,18,0.1)] transition duration-500 hover:-translate-y-2 hover:border-champagne-400/40 hover:bg-[#fffdf7] hover:shadow-[0_38px_110px_rgba(21,21,18,0.18)] sm:p-10;
+    @apply relative overflow-hidden border border-graphite-950/10 bg-[#f5f1e7]/95 p-7 shadow-[0_18px_56px_rgba(21,21,18,0.08)] transition duration-500 hover:-translate-y-1.5 hover:border-champagne-400/40 hover:bg-[#fbf8ef] hover:shadow-[0_28px_82px_rgba(21,21,18,0.13)] sm:p-8;
   }
 
   .hero-service-card {
-    @apply relative overflow-hidden border border-graphite-100/10 bg-graphite-900/85 p-8 shadow-[0_24px_84px_rgba(0,0,0,0.26)] transition duration-500 hover:-translate-y-1.5 hover:border-champagne-400/30 hover:bg-graphite-900 hover:shadow-[0_34px_110px_rgba(0,0,0,0.36)] sm:p-9;
+    @apply relative overflow-hidden border border-graphite-100/10 bg-graphite-900/80 p-6 shadow-[0_18px_60px_rgba(0,0,0,0.22)] transition duration-500 hover:-translate-y-1 hover:border-champagne-400/30 hover:bg-graphite-900 hover:shadow-[0_26px_82px_rgba(0,0,0,0.3)] sm:p-7;
   }
 
   .before-after-card {
@@ -56,7 +56,7 @@
   }
 
   .principle-card {
-    @apply border border-graphite-950/10 bg-[#f7f3e9]/95 p-9 shadow-[0_20px_62px_rgba(21,21,18,0.08)] transition duration-300 hover:-translate-y-1.5 hover:border-olive-700/40 hover:bg-[#fffdf7] hover:shadow-[0_30px_90px_rgba(21,21,18,0.14)];
+    @apply border border-graphite-950/10 bg-[#f5f1e7]/95 p-7 shadow-[0_16px_48px_rgba(21,21,18,0.07)] transition duration-300 hover:-translate-y-1 hover:border-olive-700/40 hover:bg-[#fbf8ef] hover:shadow-[0_24px_72px_rgba(21,21,18,0.12)];
   }
 
   .about-principle {
@@ -64,7 +64,7 @@
   }
 
   .signal-panel {
-    @apply border border-graphite-950/10 bg-[#f8f5ec]/95 p-9 shadow-[0_26px_86px_rgba(21,21,18,0.11)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_34px_104px_rgba(21,21,18,0.16)] sm:p-11;
+    @apply border border-graphite-950/10 bg-[#f5f1e7]/95 p-7 shadow-[0_20px_62px_rgba(21,21,18,0.09)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_28px_84px_rgba(21,21,18,0.13)] sm:p-8;
   }
 
   .signal-panel-dark {
@@ -72,7 +72,7 @@
   }
 
   .compact-row {
-    @apply flex items-start gap-3 border border-graphite-950/10 bg-[#fbf8ef]/95 p-4 text-sm font-medium leading-6 text-graphite-800 shadow-[0_12px_34px_rgba(21,21,18,0.05)] transition duration-300 hover:border-olive-700/30 hover:bg-[#fffdf7];
+    @apply flex items-start gap-3 border border-graphite-950/10 bg-[#fbf8ef]/90 p-3.5 text-sm font-medium leading-6 text-graphite-800 shadow-[0_10px_28px_rgba(21,21,18,0.045)] transition duration-300 hover:border-olive-700/30 hover:bg-[#fffdf7];
   }
 
   .compact-row svg {
@@ -88,7 +88,7 @@
   }
 
   .process-row {
-    @apply grid grid-cols-[3.5rem_1fr] gap-4 border border-graphite-100/10 bg-graphite-900/80 p-6 text-base leading-7 text-graphite-100/80 shadow-[0_18px_52px_rgba(0,0,0,0.18)] transition duration-300 hover:-translate-y-1 hover:border-champagne-400/25 hover:bg-graphite-900 sm:grid-cols-[4.5rem_1fr] sm:gap-5 sm:p-7 sm:text-lg sm:leading-8;
+    @apply grid grid-cols-[3.2rem_1fr] gap-4 border border-graphite-100/10 bg-graphite-900/80 p-5 text-base leading-7 text-graphite-100/80 shadow-[0_16px_46px_rgba(0,0,0,0.16)] transition duration-300 hover:-translate-y-1 hover:border-champagne-400/25 hover:bg-graphite-900 sm:grid-cols-[4rem_1fr] sm:gap-5 sm:p-6;
   }
 
   .process-index {
@@ -96,11 +96,11 @@
   }
 
   .audience-row {
-    @apply flex gap-4 border border-graphite-950/10 bg-[#f8f5ec]/95 p-6 text-base leading-7 text-graphite-800 shadow-[0_20px_62px_rgba(21,21,18,0.08)] transition duration-300 hover:-translate-y-1 hover:border-olive-700/40 hover:bg-[#fffdf7] hover:shadow-[0_30px_86px_rgba(21,21,18,0.14)] sm:p-7 sm:text-lg sm:leading-8;
+    @apply flex gap-4 border border-graphite-950/10 bg-[#f5f1e7]/95 p-5 text-base leading-7 text-graphite-800 shadow-[0_16px_48px_rgba(21,21,18,0.07)] transition duration-300 hover:-translate-y-1 hover:border-olive-700/40 hover:bg-[#fbf8ef] hover:shadow-[0_24px_72px_rgba(21,21,18,0.12)] sm:p-6 sm:text-lg sm:leading-8;
   }
 
   .contact-link {
-    @apply flex min-w-0 items-center gap-3 border-b border-graphite-950/10 py-3 font-medium transition hover:text-olive-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive-700;
+    @apply flex min-w-0 items-center gap-3 border-b border-graphite-950/10 py-2.5 font-medium transition hover:border-olive-700/25 hover:text-olive-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive-700;
   }
 
   .field {
@@ -109,24 +109,26 @@
 
   .field input,
   .field textarea {
-    @apply w-full min-w-0 border border-graphite-950/15 bg-[#efeadf] px-4 py-4 font-normal leading-6 text-graphite-950 outline-none shadow-[inset_0_1px_0_rgba(255,255,255,0.72)] transition duration-300 placeholder:text-graphite-700/45 focus:border-champagne-400 focus:bg-[#fffdf7] focus:ring-2 focus:ring-champagne-400/25;
+    @apply w-full min-w-0 border border-graphite-950/10 bg-[#efe9dd] px-4 py-3.5 font-normal leading-6 text-graphite-950 outline-none shadow-[inset_0_1px_0_rgba(255,255,255,0.68)] transition duration-300 placeholder:text-graphite-700/50 focus:border-champagne-400 focus:bg-[#fffdf7] focus:ring-2 focus:ring-champagne-400/25;
   }
 }
 
 .section-ivory {
   position: relative;
   background:
-    linear-gradient(180deg, rgba(21, 21, 18, 0.055), transparent 7rem),
-    radial-gradient(circle at 82% 0%, rgba(203, 185, 135, 0.12), transparent 24rem),
-    #ede9dd;
+    linear-gradient(180deg, rgba(21, 21, 18, 0.05), transparent 5.5rem),
+    radial-gradient(circle at 82% 0%, rgba(203, 185, 135, 0.11), transparent 22rem),
+    radial-gradient(circle at 8% 88%, rgba(108, 123, 74, 0.07), transparent 18rem),
+    #e9e5d8;
 }
 
 .section-olive {
   position: relative;
   background:
-    linear-gradient(180deg, rgba(21, 21, 18, 0.06), transparent 8rem),
-    radial-gradient(circle at 15% 18%, rgba(108, 123, 74, 0.14), transparent 24rem),
-    #e6e5d8;
+    linear-gradient(180deg, rgba(21, 21, 18, 0.055), transparent 6rem),
+    radial-gradient(circle at 15% 18%, rgba(108, 123, 74, 0.13), transparent 22rem),
+    radial-gradient(circle at 88% 92%, rgba(203, 185, 135, 0.1), transparent 19rem),
+    #e3e1d2;
 }
 
 h1,
@@ -174,7 +176,7 @@ h3 {
 
 .premium-button,
 .premium-submit {
-  box-shadow: 0 16px 48px rgba(203, 185, 135, 0.18);
+  box-shadow: 0 14px 40px rgba(203, 185, 135, 0.16);
 }
 
 .header-cta {
@@ -207,7 +209,7 @@ h3 {
 .premium-submit:hover {
   background: #343c24;
   transform: translateY(-2px);
-  box-shadow: 0 0 0 1px rgba(203, 185, 135, 0.22), 0 24px 68px rgba(48, 55, 32, 0.28);
+  box-shadow: 0 0 0 1px rgba(203, 185, 135, 0.2), 0 20px 58px rgba(48, 55, 32, 0.25);
 }
 
 .service-card::before {
@@ -218,7 +220,7 @@ h3 {
   height: 1px;
   content: '';
   background: linear-gradient(90deg, transparent, rgba(203, 185, 135, 0.72), transparent);
-  opacity: 0.72;
+  opacity: 0.58;
 }
 
 .service-card::after {
@@ -229,7 +231,7 @@ h3 {
   height: 72%;
   pointer-events: none;
   content: '';
-  background: radial-gradient(circle, rgba(108, 123, 74, 0.13), transparent 68%);
+  background: radial-gradient(circle, rgba(108, 123, 74, 0.11), transparent 68%);
   opacity: 0;
   transition: opacity 420ms ease, transform 420ms ease;
 }
