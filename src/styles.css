@@ -13,6 +13,7 @@
     margin: 0;
     background:
       radial-gradient(circle at 18% -8%, rgba(203, 185, 135, 0.14), transparent 30rem),
+      radial-gradient(circle at 88% 16%, rgba(108, 123, 74, 0.12), transparent 34rem),
       linear-gradient(180deg, #151512 0, #151512 24rem, #e9e5d8 49rem),
       #e9e5d8;
     color: #151512;
@@ -28,7 +29,7 @@
 
 @layer components {
   .nav-link {
-    @apply relative text-[0.95rem] font-normal text-graphite-100/70 transition duration-300 hover:text-champagne-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-champagne-400;
+    @apply relative text-[0.9rem] font-normal tracking-[0.01em] text-graphite-100/70 transition duration-300 hover:text-champagne-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-champagne-400;
   }
 
   .eyebrow {
@@ -40,11 +41,11 @@
   }
 
   .service-card {
-    @apply relative overflow-hidden border border-black/5 bg-[#f4f1e8]/95 p-6 shadow-[0_10px_30px_rgba(0,0,0,0.045)] transition duration-500 ease-out hover:-translate-y-0.5 hover:border-[#c6a85b]/40 hover:bg-[#fbf8ef] hover:shadow-[0_18px_46px_rgba(0,0,0,0.065)] sm:p-7;
+    @apply relative overflow-hidden border border-black/5 bg-[#f5f0e4]/95 p-6 shadow-[0_12px_36px_rgba(31,28,20,0.05)] transition duration-500 ease-out hover:-translate-y-0.5 hover:border-[#c6a85b]/40 hover:bg-[#fffaf0] hover:shadow-[0_20px_54px_rgba(31,28,20,0.075)] sm:p-7;
   }
 
   .hero-service-card {
-    @apply relative overflow-hidden border border-white/10 bg-graphite-900/75 p-5 shadow-[0_16px_46px_rgba(0,0,0,0.2)] transition duration-500 ease-out hover:-translate-y-0.5 hover:border-white/20 hover:bg-graphite-900/90 hover:shadow-[0_22px_68px_rgba(0,0,0,0.28)] sm:p-6;
+    @apply relative overflow-hidden border border-white/10 bg-graphite-900/60 p-5 shadow-[0_16px_46px_rgba(0,0,0,0.18)] transition duration-500 ease-out hover:-translate-y-0.5 hover:border-[#c6a85b]/40 hover:bg-graphite-900/80 hover:shadow-[0_22px_68px_rgba(0,0,0,0.24)] sm:p-6;
   }
 
   .before-after-card {
@@ -56,7 +57,7 @@
   }
 
   .principle-card {
-    @apply border border-black/5 bg-[#f4f1e8]/95 p-6 shadow-[0_10px_30px_rgba(0,0,0,0.045)] transition duration-500 ease-out hover:-translate-y-0.5 hover:border-[#c6a85b]/40 hover:bg-[#fbf8ef] hover:shadow-[0_18px_46px_rgba(0,0,0,0.065)] sm:p-7;
+    @apply relative border border-black/5 bg-[#f5f0e4]/90 p-6 shadow-[0_12px_34px_rgba(31,28,20,0.045)] transition duration-500 ease-out hover:-translate-y-0.5 hover:border-[#c6a85b]/40 hover:bg-[#fffaf0] hover:shadow-[0_20px_54px_rgba(31,28,20,0.07)] sm:p-7;
   }
 
   .about-principle {
@@ -64,7 +65,7 @@
   }
 
   .signal-panel {
-    @apply border border-black/5 bg-[#f4f1e8]/95 p-6 shadow-[0_14px_42px_rgba(0,0,0,0.055)] transition duration-500 ease-out hover:-translate-y-0.5 hover:shadow-[0_20px_58px_rgba(0,0,0,0.08)] sm:p-7;
+    @apply border border-black/5 bg-[#f5f0e4]/95 p-6 shadow-[0_16px_48px_rgba(31,28,20,0.06)] transition duration-500 ease-out hover:-translate-y-0.5 hover:border-[#c6a85b]/40 hover:shadow-[0_22px_64px_rgba(31,28,20,0.085)] sm:p-7;
   }
 
   .signal-panel-dark {
@@ -72,7 +73,7 @@
   }
 
   .compact-row {
-    @apply flex items-start gap-3 border border-black/5 bg-[#fbf8ef]/70 p-3.5 text-sm font-medium leading-relaxed text-graphite-800 shadow-none transition duration-500 ease-out hover:border-[#c6a85b]/40 hover:bg-[#fffdf7];
+    @apply flex items-start gap-3 border-b border-black/10 bg-transparent px-1 py-3.5 text-sm font-medium leading-relaxed text-graphite-800 shadow-none transition duration-500 ease-out hover:border-[#c6a85b]/40 hover:bg-[#fffdf7]/50;
   }
 
   .compact-row svg {
@@ -88,7 +89,7 @@
   }
 
   .process-row {
-    @apply grid grid-cols-[2.7rem_1fr] gap-4 border-l border-white/10 bg-transparent py-1 pl-5 pr-2 text-sm leading-relaxed text-graphite-100/75 shadow-none transition duration-500 ease-out hover:translate-x-1 hover:border-[#c6a85b]/50 sm:grid-cols-[3.4rem_1fr] sm:gap-5 sm:pl-6;
+    @apply relative grid grid-cols-[2.7rem_1fr] gap-4 border-l border-white/10 bg-transparent py-2 pl-5 pr-2 text-sm leading-relaxed text-graphite-100/75 shadow-none transition duration-500 ease-out hover:translate-x-1 hover:border-[#c6a85b]/50 sm:grid-cols-[3.4rem_1fr] sm:gap-5 sm:pl-6;
   }
 
   .process-index {
@@ -96,7 +97,7 @@
   }
 
   .audience-row {
-    @apply flex gap-4 border border-black/5 bg-[#f4f1e8]/95 p-5 text-[15px] leading-relaxed text-graphite-800 shadow-[0_10px_30px_rgba(0,0,0,0.045)] transition duration-500 ease-out hover:-translate-y-0.5 hover:border-[#c6a85b]/40 hover:bg-[#fbf8ef] hover:shadow-[0_18px_46px_rgba(0,0,0,0.065)] sm:p-6;
+    @apply flex gap-4 border border-black/5 bg-[#f5f0e4]/90 p-5 text-[15px] leading-relaxed text-graphite-800 shadow-[0_12px_34px_rgba(31,28,20,0.045)] transition duration-500 ease-out hover:-translate-y-0.5 hover:border-[#c6a85b]/40 hover:bg-[#fffaf0] hover:shadow-[0_20px_54px_rgba(31,28,20,0.07)] sm:p-6;
   }
 
   .contact-link {
@@ -109,25 +110,25 @@
 
   .field input,
   .field textarea {
-    @apply w-full min-w-0 border border-black/10 bg-[#efe9dd] px-4 py-3.5 font-normal leading-6 text-graphite-950 outline-none shadow-[inset_0_1px_0_rgba(255,255,255,0.68)] transition duration-300 placeholder:text-graphite-700/50 hover:border-[#c6a85b]/40 focus:border-[#c6a85b] focus:bg-[#fffdf7] focus:ring-2 focus:ring-[#c6a85b]/25;
+    @apply w-full min-w-0 border border-black/10 bg-[#eee6d8] px-4 py-3.5 font-normal leading-6 text-graphite-950 outline-none shadow-[inset_0_1px_0_rgba(255,255,255,0.74)] transition duration-300 placeholder:text-graphite-700/50 hover:border-[#c6a85b]/40 focus:border-[#c6a85b] focus:bg-[#fffaf0] focus:ring-2 focus:ring-[#c6a85b]/25;
   }
 }
 
 .section-ivory {
   position: relative;
   background:
+    radial-gradient(circle at 75% 10%, rgba(198, 168, 91, 0.12), transparent 24rem),
+    radial-gradient(circle at 8% 82%, rgba(108, 123, 74, 0.08), transparent 20rem),
     linear-gradient(180deg, #f6f4ef 0%, #f1eee7 100%),
-    radial-gradient(circle at 82% 0%, rgba(198, 168, 91, 0.09), transparent 22rem),
-    radial-gradient(circle at 8% 88%, rgba(108, 123, 74, 0.07), transparent 18rem),
     #f3f1ea;
 }
 
 .section-olive {
   position: relative;
   background:
+    radial-gradient(circle at 15% 18%, rgba(108, 123, 74, 0.14), transparent 22rem),
+    radial-gradient(circle at 88% 92%, rgba(198, 168, 91, 0.12), transparent 19rem),
     linear-gradient(180deg, #f3f1ea 0%, #ebe8dc 100%),
-    radial-gradient(circle at 15% 18%, rgba(108, 123, 74, 0.13), transparent 22rem),
-    radial-gradient(circle at 88% 92%, rgba(198, 168, 91, 0.1), transparent 19rem),
     #ebe8dc;
 }
 
@@ -140,38 +141,20 @@ h3 {
 .nav-link::after {
   position: absolute;
   right: 0;
-  bottom: -0.72rem;
+  bottom: -0.62rem;
   left: 0;
   height: 1px;
   content: '';
   background: linear-gradient(90deg, transparent, rgba(108, 123, 74, 0.78), rgba(203, 185, 135, 0.82), transparent);
   opacity: 0;
-  transform: scaleX(0.32) translateY(2px);
-  transition: opacity 320ms ease, transform 320ms ease;
+  transform: scaleX(0.18) translateY(2px);
+  transform-origin: left;
+  transition: opacity 360ms cubic-bezier(0.16, 1, 0.3, 1), transform 360ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .nav-link:hover::after {
   opacity: 1;
   transform: scaleX(1) translateY(0);
-}
-
-.nav-link::before {
-  position: absolute;
-  right: -0.9rem;
-  bottom: -0.74rem;
-  width: 3px;
-  height: 3px;
-  content: '';
-  background: #6c7b4a;
-  border-radius: 999px;
-  opacity: 0;
-  transform: translateX(-0.35rem);
-  transition: opacity 320ms ease, transform 320ms ease;
-}
-
-.nav-link:hover::before {
-  opacity: 0.9;
-  transform: translateX(0);
 }
 
 .premium-button,
@@ -180,10 +163,10 @@ h3 {
 }
 
 .header-cta {
-  border: 1px solid rgba(203, 185, 135, 0.36);
-  background: #cbb987;
+  border: 1px solid rgba(203, 185, 135, 0.42);
+  background: linear-gradient(135deg, rgba(203, 185, 135, 0.92), rgba(177, 151, 82, 0.9));
   color: #151512;
-  box-shadow: 0 16px 42px rgba(203, 185, 135, 0.22);
+  box-shadow: 0 14px 36px rgba(203, 185, 135, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.32);
 }
 
 .premium-button:hover {
@@ -223,6 +206,17 @@ h3 {
   opacity: 0.58;
 }
 
+.card-index {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.35rem;
+  font-family: Manrope, Inter, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: rgba(108, 123, 74, 0.52);
+}
+
 .service-card::after {
   position: absolute;
   right: -30%;
@@ -251,6 +245,43 @@ h3 {
   height: 1px;
   content: '';
   background: linear-gradient(90deg, transparent, rgba(108, 123, 74, 0.7), rgba(203, 185, 135, 0.48), transparent);
+}
+
+.strategic-system {
+  isolation: isolate;
+}
+
+.strategic-system::before {
+  position: absolute;
+  inset: 0.8rem;
+  z-index: 0;
+  pointer-events: none;
+  content: '';
+  border-top: 1px solid rgba(203, 185, 135, 0.18);
+  border-right: 1px solid rgba(239, 238, 231, 0.08);
+}
+
+.strategic-system::after {
+  position: absolute;
+  right: 14%;
+  bottom: 12%;
+  width: 11rem;
+  height: 11rem;
+  pointer-events: none;
+  content: '';
+  background: radial-gradient(circle, rgba(198, 168, 91, 0.14), transparent 68%);
+  filter: blur(3px);
+}
+
+.system-panel::before {
+  position: absolute;
+  top: 1.2rem;
+  left: -1px;
+  width: 1px;
+  height: 3.2rem;
+  content: '';
+  background: #c6a85b;
+  opacity: 0.72;
 }
 
 .hero-visual {
@@ -282,6 +313,20 @@ h3 {
   background-size: 96px 96px, 96px 96px, auto;
 }
 
+.section-ivory::after,
+.section-olive::after {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: '';
+  opacity: 0.22;
+  background:
+    linear-gradient(rgba(21, 21, 18, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(21, 21, 18, 0.025) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(180deg, transparent, black 18%, black 82%, transparent);
+}
+
 .service-card-featured {
   border-color: rgba(198, 168, 91, 0.32);
   background: #fffdf8;
@@ -289,6 +334,18 @@ h3 {
 }
 
 @media (min-width: 1024px) {
+  .service-card:nth-child(odd),
+  .principle-card:nth-child(even),
+  .audience-row:nth-child(even) {
+    transform: translateY(0.45rem);
+  }
+
+  .service-card:nth-child(odd):hover,
+  .principle-card:nth-child(even):hover,
+  .audience-row:nth-child(even):hover {
+    transform: translateY(0.15rem);
+  }
+
   .service-card-featured {
     transform: translateY(-0.35rem) scale(1.025);
   }
