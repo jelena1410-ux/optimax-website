@@ -26,14 +26,48 @@ const serviceIcons = {
   shield: ShieldCheck,
 };
 
+function useScrollReveal() {
+  React.useEffect(() => {
+    const elements = Array.from(document.querySelectorAll('.reveal'));
+    if (!elements.length) {
+      return undefined;
+    }
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+      elements.forEach((element) => element.classList.add('is-visible'));
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: '0px 0px -10% 0px', threshold: 0.12 },
+    );
+
+    elements.forEach((element, index) => {
+      element.style.setProperty('--reveal-delay', `${Math.min(index % 4, 3) * 90}ms`);
+      observer.observe(element);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+}
+
 function Logo() {
   return (
-    <a href="#pocetna" className="group mr-4 flex h-10 w-[12.1rem] shrink-0 items-center sm:w-[13.15rem] lg:mr-10 xl:mr-12" aria-label={siteContent.logo.ariaLabel}>
-      <span className="flex min-w-0 items-baseline gap-2.5 whitespace-nowrap leading-none">
-        <span className="font-display text-[1.38rem] font-semibold tracking-tight text-[#f5f5f2] transition duration-300 group-hover:text-white sm:text-[1.54rem]">
+    <a href="#pocetna" className="group mr-6 flex h-11 w-[8.8rem] shrink-0 items-center sm:w-[9.6rem] lg:mr-12 xl:mr-16" aria-label={siteContent.logo.ariaLabel}>
+      <span className="flex min-w-0 flex-col items-start justify-center leading-none">
+        <span className="font-display text-[1.36rem] font-semibold tracking-tight text-[#f5f5f2] transition duration-300 group-hover:text-white sm:text-[1.5rem]">
           Opti<span className="text-champagne-400">MAX</span>
         </span>
-        <span className="text-[0.76rem] font-semibold uppercase tracking-[0.12em] text-[#f5f5f2]/95 transition duration-300 group-hover:text-champagne-200 sm:text-[0.82rem] sm:tracking-[0.14em]">
+        <span className="mt-1 text-[0.66rem] font-semibold uppercase tracking-[0.18em] text-[#f5f5f2]/90 transition duration-300 group-hover:text-champagne-200 sm:text-[0.7rem] sm:tracking-[0.2em]">
           Consulting
         </span>
       </span>
@@ -121,7 +155,7 @@ function HeroGraphic() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_16%,rgba(198,168,91,0.06),transparent_30%),linear-gradient(135deg,rgba(239,238,231,0.025),transparent_42%),linear-gradient(180deg,rgba(21,21,18,0.02),rgba(21,21,18,0.42))]" />
 
       <div className="relative grid min-h-[330px] gap-4 p-4 sm:min-h-[380px] sm:p-5 lg:min-h-[430px] lg:content-center lg:gap-5 lg:p-6">
-        <div className="inline-flex w-fit items-center gap-2 border border-white/10 bg-graphite-950/50 px-3 py-1.5 text-[0.58rem] font-semibold uppercase tracking-[0.16em] text-champagne-400/85 shadow-[0_10px_24px_rgba(0,0,0,0.12)]">
+        <div className="inline-flex w-fit items-center gap-2 border border-white/10 bg-graphite-950/50 px-3 py-1.5 text-[0.58rem] font-semibold uppercase tracking-[0.16em] text-champagne-400/80 shadow-[0_10px_24px_rgba(0,0,0,0.12)]">
           <Compass size={12} />
           {visual.badge}
         </div>
@@ -132,7 +166,7 @@ function HeroGraphic() {
               className={`relative overflow-hidden border p-5 shadow-[0_14px_36px_rgba(0,0,0,0.18)] transition duration-500 ease-out hover:-translate-y-1 hover:border-white/20 sm:p-5 ${
                 index === 1
                   ? 'border-white/10 bg-[linear-gradient(135deg,rgba(48,55,32,0.82),rgba(24,25,20,0.78))]'
-                  : 'border-white/10 bg-graphite-950/65'
+                  : 'border-white/10 bg-graphite-950/70'
               }`}
             >
               <span className="text-[0.64rem] font-semibold uppercase tracking-[0.2em] text-champagne-400/80">
@@ -180,7 +214,7 @@ function PrincipleSection({ content }) {
         <SectionHeading eyebrow={content.eyebrow} title={content.title} text={content.text} />
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {content.items.map((item) => (
-            <article key={item.title} className="principle-card">
+            <article key={item.title} className="principle-card reveal">
               <h3 className="font-display text-xl font-semibold text-graphite-950">{item.title}</h3>
               <p className="mt-4 text-sm leading-7 text-graphite-700">{item.text}</p>
             </article>
@@ -345,6 +379,8 @@ function App() {
     strategicSupport,
   } = siteContent;
 
+  useScrollReveal();
+
   const handleContactSubmit = (event) => {
     event.preventDefault();
     const form = event.currentTarget;
@@ -436,7 +472,7 @@ function App() {
           </div>
           <div className="grid gap-6">
             {process.items.map((item, index) => (
-              <div key={item.title} className="process-row">
+              <div key={item.title} className="process-row reveal">
                 <span className="process-index">{String(index + 1).padStart(2, '0')}</span>
                 <p>
                   <span className="block font-display text-xl font-semibold text-graphite-100">{item.title}</span>
@@ -464,7 +500,7 @@ function App() {
           </div>
           <div className="grid gap-4">
             {audiences.items.map((item) => (
-              <div key={item} className="audience-row">
+              <div key={item} className="audience-row reveal">
                 <CheckCircle2 className="shrink-0 text-olive-700" size={22} />
                 <p>{item}</p>
               </div>
@@ -475,7 +511,7 @@ function App() {
 
       <section id="podrska" className="section-pad scroll-mt-24">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
-          <div className="grid items-stretch overflow-hidden border border-champagne-400/15 bg-graphite-950 shadow-premium lg:grid-cols-[0.92fr_1.08fr]">
+          <div className="reveal grid items-stretch overflow-hidden border border-champagne-400/15 bg-graphite-950 shadow-premium lg:grid-cols-[0.92fr_1.08fr]">
             <div className="flex flex-col justify-center p-7 text-graphite-100 sm:p-10 lg:p-12">
               <p className="eyebrow text-champagne-400">{strategicSupport.eyebrow}</p>
               <h2 className="mt-5 font-display text-[1.55rem] font-semibold leading-tight tracking-tight sm:text-[2rem] lg:text-[2.45rem]">
@@ -500,7 +536,7 @@ function App() {
 
       <section id="kontakt" className="section-ivory scroll-mt-24 py-20 sm:py-24 lg:py-28">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
-          <div>
+          <div className="reveal">
             <p className="eyebrow">{contact.eyebrow}</p>
             <h2 className="mt-4 font-display text-[1.7rem] font-semibold leading-[1.18] sm:text-[2.2rem] lg:text-[2.8rem]">
               {contact.title}
@@ -523,7 +559,7 @@ function App() {
               </span>
             </div>
           </div>
-          <form className="border border-graphite-950/10 bg-[#fbfaf5] p-6 shadow-[0_24px_76px_rgba(21,21,18,0.1)] sm:p-8" onSubmit={handleContactSubmit}>
+          <form className="reveal border border-graphite-950/10 bg-[#fbfaf5] p-6 shadow-[0_24px_76px_rgba(21,21,18,0.1)] sm:p-8" onSubmit={handleContactSubmit}>
             <div className="grid gap-5 sm:grid-cols-2">
               <label className="field">
                 {contact.form.fields.name.label}
