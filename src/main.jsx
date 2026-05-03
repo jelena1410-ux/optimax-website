@@ -62,12 +62,12 @@ function useScrollReveal() {
 
 function Logo() {
   return (
-    <a href="#pocetna" className="group mr-6 flex h-11 w-[8.8rem] shrink-0 items-center sm:w-[9.6rem] lg:mr-12 xl:mr-16" aria-label={siteContent.logo.ariaLabel}>
-      <span className="flex min-w-0 flex-col items-start justify-center leading-none">
-        <span className="font-display text-[1.36rem] font-semibold tracking-tight text-[#f5f5f2] transition duration-300 group-hover:text-white sm:text-[1.5rem]">
+    <a href="#pocetna" className="group mr-8 flex h-11 w-[9.2rem] shrink-0 items-center sm:w-[10rem] lg:mr-16 xl:mr-20" aria-label={siteContent.logo.ariaLabel}>
+      <span className="relative flex min-w-0 flex-col items-start justify-center border-l border-champagne-400/40 pl-3 leading-none">
+        <span className="font-display text-[1.32rem] font-semibold tracking-tight text-[#f5f5f2] transition duration-300 group-hover:text-white sm:text-[1.46rem]">
           Opti<span className="text-champagne-400">MAX</span>
         </span>
-        <span className="mt-1 text-[0.66rem] font-semibold uppercase tracking-[0.18em] text-[#f5f5f2]/90 transition duration-300 group-hover:text-champagne-200 sm:text-[0.7rem] sm:tracking-[0.2em]">
+        <span className="mt-1.5 text-[0.6rem] font-semibold uppercase tracking-[0.2em] text-[#f5f5f2]/80 transition duration-300 group-hover:text-champagne-200 sm:text-[0.64rem] sm:tracking-[0.22em]">
           Consulting
         </span>
       </span>
@@ -90,17 +90,17 @@ function Header() {
   }, []);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-champagne-400/15 bg-graphite-950/90 shadow-[0_18px_55px_rgba(0,0,0,0.18)] backdrop-blur-xl">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-5 px-5 py-3 lg:px-8">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-champagne-400/10 bg-graphite-950/80 shadow-[0_12px_42px_rgba(0,0,0,0.12)] backdrop-blur-xl">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-5 py-2.5 lg:px-8">
         <Logo />
-        <nav className="hidden items-center gap-10 xl:gap-12 lg:flex">
+        <nav className="hidden items-center gap-11 xl:gap-14 lg:flex">
           {siteContent.navigation.map(({ label, href }) => (
             <a key={href} href={href} className="nav-link">
               {label}
             </a>
           ))}
         </nav>
-        <a href="#kontakt" className="header-cta hidden min-h-12 items-center gap-2 px-6 py-3 text-sm font-semibold text-champagne-100 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-champagne-400 lg:flex">
+        <a href="#kontakt" className="header-cta hidden min-h-11 items-center gap-2 px-5 py-2.5 text-[0.82rem] font-semibold text-champagne-100 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-champagne-400 lg:flex">
           {siteContent.ctas.primary}
           <ArrowRight className="shrink-0" size={16} />
         </a>
@@ -151,34 +151,37 @@ function HeroGraphic() {
   const visualCards = [visual.before, visual.after];
 
   return (
-    <div className="reveal relative overflow-hidden border border-white/10 bg-graphite-900/80 shadow-[0_22px_68px_rgba(0,0,0,0.24)]">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_16%,rgba(198,168,91,0.06),transparent_30%),linear-gradient(135deg,rgba(239,238,231,0.025),transparent_42%),linear-gradient(180deg,rgba(21,21,18,0.02),rgba(21,21,18,0.42))]" />
+    <div className="strategic-system reveal relative overflow-hidden bg-graphite-950/60 p-5 shadow-[0_30px_92px_rgba(0,0,0,0.28)] sm:p-6 lg:p-7">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_76%_16%,rgba(198,168,91,0.12),transparent_30%),radial-gradient(circle_at_8%_88%,rgba(108,123,74,0.16),transparent_30%),linear-gradient(135deg,rgba(239,238,231,0.035),transparent_42%)]" />
+      <div className="absolute left-8 top-0 h-full w-px bg-gradient-to-b from-transparent via-champagne-400/40 to-transparent" />
+      <div className="absolute right-0 top-9 h-px w-24 bg-gradient-to-l from-champagne-400/40 to-transparent" />
+      <div className="absolute bottom-10 left-0 h-px w-32 bg-gradient-to-r from-olive-600/40 to-transparent" />
 
-      <div className="relative grid min-h-[330px] gap-4 p-4 sm:min-h-[380px] sm:p-5 lg:min-h-[430px] lg:content-center lg:gap-5 lg:p-6">
-        <div className="inline-flex w-fit items-center gap-2 border border-white/10 bg-graphite-950/50 px-3 py-1.5 text-[0.58rem] font-semibold uppercase tracking-[0.16em] text-champagne-400/80 shadow-[0_10px_24px_rgba(0,0,0,0.12)]">
+      <div className="relative grid min-h-[320px] gap-5 sm:min-h-[370px] lg:min-h-[405px] lg:content-center">
+        <div className="inline-flex w-fit items-center gap-2 border-b border-champagne-400/40 pb-2 text-[0.57rem] font-semibold uppercase tracking-[0.18em] text-champagne-300/80">
           <Compass size={12} />
           {visual.badge}
         </div>
-        <div className="grid gap-4 lg:grid-cols-2 lg:gap-5">
+        <div className="grid gap-5 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
           {visualCards.map((card, index) => (
             <article
               key={card.title}
-              className={`relative overflow-hidden border p-5 shadow-[0_14px_36px_rgba(0,0,0,0.18)] transition duration-500 ease-out hover:-translate-y-1 hover:border-white/20 sm:p-5 ${
+              className={`system-panel group relative overflow-hidden border-l py-1.5 pl-5 pr-2 transition duration-500 ease-out hover:translate-x-1 sm:pl-6 ${
                 index === 1
-                  ? 'border-white/10 bg-[linear-gradient(135deg,rgba(48,55,32,0.82),rgba(24,25,20,0.78))]'
-                  : 'border-white/10 bg-graphite-950/70'
+                  ? 'border-champagne-400/40 lg:mt-12'
+                  : 'border-white/15'
               }`}
             >
-              <span className="text-[0.64rem] font-semibold uppercase tracking-[0.2em] text-champagne-400/80">
+              <span className="font-display text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-champagne-400/75">
                 {String(index + 1).padStart(2, '0')}
               </span>
-              <h3 className="mt-4 font-display text-[1.22rem] font-semibold leading-tight tracking-tight text-[#f5f5f2] sm:text-[1.32rem]">
+              <h3 className="mt-3 max-w-[15rem] font-display text-[1.16rem] font-semibold leading-tight tracking-tight text-[#f5f5f2] transition duration-300 group-hover:text-champagne-100 sm:text-[1.26rem]">
                 {card.title}
               </h3>
-              <ul className="mt-5 grid gap-2 text-[0.84rem] leading-relaxed text-graphite-100/75 sm:text-[0.9rem]">
+              <ul className="mt-5 grid gap-3 text-[0.8rem] leading-relaxed text-graphite-100/70 sm:text-[0.86rem]">
                 {card.items.map((item) => (
-                  <li key={item} className="flex gap-3">
-                    <span className="mt-2.5 h-1 w-1 shrink-0 bg-champagne-400/70" />
+                  <li key={item} className="flex gap-3 border-t border-white/10 pt-2.5 first:border-t-0 first:pt-0">
+                    <span className="mt-2 h-px w-4 shrink-0 bg-champagne-400/50 transition duration-300 group-hover:w-6" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -215,6 +218,7 @@ function PrincipleSection({ content }) {
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {content.items.map((item) => (
             <article key={item.title} className="principle-card reveal">
+              <span className="card-index">{String(content.items.indexOf(item) + 1).padStart(2, '0')}</span>
               <h3 className="font-display text-xl font-semibold text-graphite-950">{item.title}</h3>
               <p className="mt-4 text-sm leading-7 text-graphite-700">{item.text}</p>
             </article>
@@ -311,6 +315,7 @@ function ExpertiseSection({ content }) {
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {content.items.map((item) => (
             <article key={item.title} className="service-card reveal">
+              <span className="card-index">{String(content.items.indexOf(item) + 1).padStart(2, '0')}</span>
               <Target className="text-olive-700" size={24} />
               <h3 className="mt-7 font-display text-xl font-semibold text-graphite-950">{item.title}</h3>
               <p className="mt-4 text-sm leading-7 text-graphite-700">{item.text}</p>
@@ -410,10 +415,10 @@ function App() {
       <section id="pocetna" className="relative scroll-mt-24 overflow-hidden bg-graphite-950 pt-28 text-graphite-100 lg:pt-32">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_40%,rgba(198,168,91,0.08),transparent_40%)]" />
         <div className="absolute inset-0 hero-lines opacity-25" />
-        <div className="relative mx-auto grid max-w-7xl gap-12 px-5 pb-14 sm:gap-14 sm:pb-20 lg:grid-cols-[1fr_0.86fr] lg:px-8 lg:pb-24">
+        <div className="relative mx-auto grid max-w-7xl gap-12 px-5 pb-14 sm:gap-14 sm:pb-20 lg:grid-cols-[1fr_0.86fr] lg:px-8 lg:pb-[5.5rem]">
           <div className="reveal flex flex-col justify-center">
             <p className="eyebrow text-champagne-400">POSLOVNA ARHITEKTURA</p>
-            <h1 className="mt-7 max-w-3xl font-display text-[2.08rem] font-semibold leading-[1.08] tracking-tight text-[#f5f5f2] sm:text-[2.72rem] lg:text-[3.82rem]">
+            <h1 className="mt-7 max-w-3xl font-display text-[2rem] font-semibold leading-[1.08] tracking-tight text-[#f5f5f2] sm:text-[2.58rem] lg:text-[3.48rem]">
               {hero.title}
             </h1>
             <p className="mt-7 max-w-xl text-[15px] leading-relaxed text-[#d9d3c6] sm:text-base">
@@ -447,6 +452,7 @@ function App() {
 
             return (
               <article key={title} className={`service-card reveal ${index === 1 ? 'service-card-featured' : ''}`}>
+                <span className="card-index">{String(index + 1).padStart(2, '0')}</span>
                 <Icon className="text-olive-700" size={30} />
                 <h3 className="mt-8 font-display text-xl font-semibold text-graphite-950">{title}</h3>
                 <p className="mt-4 leading-7 text-graphite-700">{text}</p>
