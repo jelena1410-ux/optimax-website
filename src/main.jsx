@@ -34,12 +34,12 @@ function Logo() {
           <span className="font-display text-[1.55rem] font-semibold tracking-[0.02em] text-graphite-100 transition duration-300 group-hover:text-white sm:text-[1.72rem]">
             Opti<span className="text-champagne-400">MAX</span>
           </span>
-          <span className="hidden text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-graphite-100/82 transition duration-300 group-hover:text-champagne-200 sm:inline">
+          <span className="hidden text-[0.72rem] font-semibold uppercase tracking-[0.26em] text-graphite-100/90 transition duration-300 group-hover:text-champagne-200 sm:inline">
             Consulting
           </span>
         </span>
-        <span className="mt-1.5 hidden text-[0.58rem] font-semibold uppercase tracking-[0.32em] text-graphite-100/58 transition duration-300 group-hover:text-graphite-100/72 sm:block">
-          Poslovna dijagnostika
+        <span className="mt-1.5 hidden text-[0.62rem] font-semibold uppercase tracking-[0.32em] text-graphite-100/76 transition duration-300 group-hover:text-graphite-100/90 sm:block">
+          POSLOVNA ARHITEKTURA
         </span>
       </span>
     </a>
