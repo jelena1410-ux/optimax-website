@@ -28,13 +28,14 @@ const serviceIcons = {
 
 function Logo() {
   return (
-    <a href="#pocetna" className="group flex shrink-0 items-center" aria-label={siteContent.logo.ariaLabel}>
-      <span className="flex h-7 w-[116px] items-center justify-center border border-champagne-400/20 bg-stone-50/95 px-3 py-1.5 shadow-[0_10px_30px_rgba(0,0,0,0.18)] transition duration-300 group-hover:border-champagne-400/40 group-hover:bg-white sm:h-8 sm:w-[136px] lg:h-9 lg:w-[152px]">
-        <img
-          src="/optimax-logo-transparent.png"
-          alt={siteContent.logo.alt}
-          className="h-full w-full object-contain"
-        />
+    <a href="#pocetna" className="group flex h-11 shrink-0 items-center" aria-label={siteContent.logo.ariaLabel}>
+      <span className="grid gap-0.5 leading-none">
+        <span className="font-display text-[1.45rem] font-semibold tracking-[0.03em] text-graphite-100 transition duration-300 group-hover:text-white sm:text-[1.55rem]">
+          Opti<span className="text-champagne-400">MAX</span>
+        </span>
+        <span className="text-[0.52rem] font-semibold uppercase tracking-[0.46em] text-olive-300/85 transition duration-300 group-hover:text-champagne-300">
+          Consulting
+        </span>
       </span>
     </a>
   );
