@@ -165,11 +165,21 @@ export const siteContent = {
     eyebrow: 'O nama',
     title: 'Poslovni sustavi ne nastaju slučajno. Oni se grade.',
     paragraphs: [
-      'OptiMAX Consulting okuplja stručnjake usmjerene na uvođenje reda, jasnoće i mjerljivosti u poslovanje.',
-      'Radimo s tvrtkama koje žele bolje razumjeti svoje procese, jasnije definirati odgovornosti i donositi odluke na temelju pouzdanih podataka.',
+      'Radimo s tvrtkama koje žele prestati upravljati kroz improvizaciju i početi upravljati kroz sustav.',
+      'Fokus nije na dodatnim slojevima administracije, nego na jasnoći: tko odlučuje, što se prati i kako se posao stvarno vodi.',
+      'Rezultat nije “bolji osjećaj u poslovanju”, nego konkretna promjena: jasnije odgovornosti, bolji pregled i odluke koje se donose brže i sigurnije.',
     ],
-    highlights: ['sustav > improvizacija', 'jasnoća > kompleksnost', 'praksa > teorija'],
-    closing: 'Problem najčešće nije u ljudima, nego u sustavu.',
+    viewpointTitle: 'Kako gledamo na poslovanje',
+    highlights: [
+      'Sustav umjesto improvizacije',
+      'Jasnoća prije kompleksnosti',
+      'Podaci prije pretpostavki',
+      'Provedba prije strategije',
+    ],
+    closing: [
+      'Problem rijetko nastaje zbog ljudi.',
+      'Najčešće nastaje zbog sustava koji nije jasno postavljen.',
+    ],
   },
 
   expertise: {
