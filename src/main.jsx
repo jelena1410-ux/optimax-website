@@ -28,13 +28,18 @@ const serviceIcons = {
 
 function Logo() {
   return (
-    <a href="#pocetna" className="group flex h-11 shrink-0 items-center" aria-label={siteContent.logo.ariaLabel}>
-      <span className="grid gap-0.5 leading-none">
-        <span className="font-display text-[1.45rem] font-semibold tracking-[0.03em] text-graphite-100 transition duration-300 group-hover:text-white sm:text-[1.55rem]">
-          Opti<span className="text-champagne-400">MAX</span>
+    <a href="#pocetna" className="group flex h-11 max-w-[13rem] shrink-0 items-center" aria-label={siteContent.logo.ariaLabel}>
+      <span className="flex min-w-0 flex-col items-start justify-center leading-none">
+        <span className="flex min-w-0 items-baseline gap-2">
+          <span className="font-display text-[1.35rem] font-semibold tracking-[0.03em] text-graphite-100 transition duration-300 group-hover:text-white sm:text-[1.45rem]">
+            Opti<span className="text-champagne-400">MAX</span>
+          </span>
+          <span className="text-[0.54rem] font-semibold uppercase tracking-[0.34em] text-graphite-100/72 transition duration-300 group-hover:text-champagne-200">
+            Consulting
+          </span>
         </span>
-        <span className="text-[0.52rem] font-semibold uppercase tracking-[0.46em] text-olive-300/85 transition duration-300 group-hover:text-champagne-300">
-          Consulting
+        <span className="mt-1 hidden text-[0.5rem] font-medium uppercase tracking-[0.28em] text-graphite-100/46 transition duration-300 group-hover:text-graphite-100/62 sm:block">
+          poslovna dijagnostika
         </span>
       </span>
     </a>
