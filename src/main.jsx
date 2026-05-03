@@ -28,12 +28,12 @@ const serviceIcons = {
 
 function Logo() {
   return (
-    <a href="#pocetna" className="group flex h-11 w-[8.25rem] shrink-0 items-center sm:w-[9.75rem]" aria-label={siteContent.logo.ariaLabel}>
-      <span className="flex min-w-0 flex-col items-start justify-center leading-none">
-        <span className="font-display text-[1.55rem] font-semibold tracking-[0.02em] text-graphite-100 transition duration-300 group-hover:text-white sm:text-[1.72rem]">
+    <a href="#pocetna" className="group flex h-11 w-[12.25rem] shrink-0 items-center sm:w-[13.25rem]" aria-label={siteContent.logo.ariaLabel}>
+      <span className="flex min-w-0 items-baseline gap-2.5 whitespace-nowrap leading-none">
+        <span className="font-display text-[1.45rem] font-semibold tracking-[0.02em] text-graphite-100 transition duration-300 group-hover:text-white sm:text-[1.62rem]">
           Opti<span className="text-champagne-400">MAX</span>
         </span>
-        <span className="mt-1 hidden text-[0.62rem] font-semibold uppercase tracking-[0.38em] text-graphite-100/82 transition duration-300 group-hover:text-champagne-200 sm:block">
+        <span className="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-graphite-100/90 transition duration-300 group-hover:text-champagne-200 sm:text-[0.74rem] sm:tracking-[0.26em]">
           Consulting
         </span>
       </span>
@@ -117,11 +117,11 @@ function HeroGraphic() {
   const visualCards = [visual.before, visual.after];
 
   return (
-    <div className="relative overflow-hidden border border-champagne-400/20 bg-graphite-900 shadow-[0_34px_95px_rgba(0,0,0,0.34)]">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_16%,rgba(203,185,135,0.10),transparent_28%),linear-gradient(135deg,rgba(239,238,231,0.045),transparent_38%),linear-gradient(180deg,rgba(21,21,18,0.08),rgba(21,21,18,0.52))]" />
+    <div className="relative overflow-hidden border border-champagne-400/20 bg-graphite-900 shadow-[0_28px_82px_rgba(0,0,0,0.3)]">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_16%,rgba(203,185,135,0.08),transparent_28%),linear-gradient(135deg,rgba(239,238,231,0.035),transparent_38%),linear-gradient(180deg,rgba(21,21,18,0.02),rgba(21,21,18,0.46))]" />
 
-      <div className="relative grid min-h-[430px] gap-6 p-6 sm:min-h-[500px] sm:p-8 lg:min-h-[580px] lg:content-center lg:gap-7 lg:p-10">
-        <div className="inline-flex w-fit items-center gap-2 border border-champagne-400/20 bg-graphite-950/70 px-3.5 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-champagne-400/80 shadow-[0_14px_38px_rgba(0,0,0,0.18)]">
+      <div className="relative grid min-h-[410px] gap-5 p-6 sm:min-h-[480px] sm:p-8 lg:min-h-[540px] lg:content-center lg:gap-6 lg:p-9">
+        <div className="inline-flex w-fit items-center gap-2 border border-champagne-400/20 bg-graphite-950/60 px-3 py-1.5 text-[0.64rem] font-semibold uppercase tracking-[0.2em] text-champagne-400/80 shadow-[0_12px_32px_rgba(0,0,0,0.16)]">
           <Compass size={13} />
           {visual.badge}
         </div>
@@ -129,10 +129,10 @@ function HeroGraphic() {
           {visualCards.map((card, index) => (
             <article
               key={card.title}
-              className={`relative overflow-hidden border p-7 shadow-[0_22px_64px_rgba(0,0,0,0.24)] transition duration-500 hover:-translate-y-1 sm:p-8 ${
+              className={`relative overflow-hidden border p-7 shadow-[0_18px_54px_rgba(0,0,0,0.22)] transition duration-500 hover:-translate-y-1 sm:p-8 ${
                 index === 1
-                  ? 'border-[#6b7a3f]/40 bg-[#252b1d]/80 hover:border-champagne-400/40'
-                  : 'border-graphite-100/10 bg-graphite-950/80 hover:border-champagne-400/30'
+                  ? 'border-[#6b7a3f]/40 bg-[#23281d]/75 hover:border-champagne-400/40'
+                  : 'border-graphite-100/10 bg-graphite-950/75 hover:border-champagne-400/30'
               }`}
             >
               <span className="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-champagne-400/80">
@@ -141,10 +141,10 @@ function HeroGraphic() {
               <h3 className="mt-5 font-display text-[1.55rem] font-semibold leading-[1.22] text-graphite-100">
                 {card.title}
               </h3>
-              <ul className="mt-8 grid gap-4 text-[0.95rem] leading-7 text-graphite-100/80">
+              <ul className="mt-7 grid gap-3.5 text-[0.95rem] leading-7 text-graphite-100/80">
                 {card.items.map((item) => (
                   <li key={item} className="flex gap-3.5">
-                    <span className="mt-2.5 h-1.5 w-1.5 shrink-0 bg-champagne-400/72" />
+                    <span className="mt-2.5 h-1.5 w-1.5 shrink-0 bg-champagne-400/70" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -192,36 +192,55 @@ function PrincipleSection({ content }) {
 }
 
 function AboutSection({ content, cta }) {
+  const principles = [
+    'Sustav prije improvizacije',
+    'Jasnoća prije kompleksnosti',
+    'Podaci prije pretpostavki',
+    'Provedba prije strategije',
+  ];
+
   return (
-    <section id="o-nama" className="section-pad scroll-mt-24 bg-graphite-950 text-graphite-100">
-      <div className="mx-auto grid max-w-7xl gap-14 px-5 lg:grid-cols-[0.92fr_1.08fr] lg:items-start lg:px-8">
+    <section id="o-nama" className="section-pad relative scroll-mt-24 overflow-hidden bg-graphite-950 text-graphite-100">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(203,185,135,0.06),transparent_28%),linear-gradient(180deg,rgba(21,21,18,0),rgba(48,55,32,0.16))]" />
+      <div className="relative mx-auto grid max-w-7xl gap-14 px-5 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:px-8">
         <div className="max-w-2xl">
           <p className="eyebrow text-champagne-400">{content.eyebrow}</p>
-          <h2 className="mt-5 font-display text-3xl font-semibold leading-[1.18] sm:text-4xl sm:leading-[1.16] lg:text-5xl">
+          <h2 className="mt-6 font-display text-3xl font-semibold leading-[1.22] sm:text-4xl sm:leading-[1.18] lg:text-5xl">
             {content.title}
           </h2>
-          <div className="mt-8 space-y-6 text-lg leading-9 text-graphite-100/75">
+          <div className="mt-9 space-y-7 text-lg leading-9 text-graphite-100/75">
             {content.paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
-          <a href="#kontakt" className="premium-button mt-9 inline-flex min-h-12 items-center justify-center gap-3 bg-champagne-400 px-8 py-4 text-center font-semibold text-graphite-950 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-champagne-400">
+          <a href="#kontakt" className="premium-button mt-10 inline-flex min-h-12 items-center justify-center gap-3 bg-champagne-400 px-8 py-4 text-center font-semibold text-graphite-950 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-champagne-400">
             {cta}
             <ArrowRight className="shrink-0" size={18} />
           </a>
         </div>
-        <div className="border border-champagne-400/15 bg-graphite-900/60 p-6 shadow-[0_28px_90px_rgba(0,0,0,0.28)] sm:p-8 lg:p-10">
-          <h3 className="font-display text-2xl font-semibold leading-tight text-graphite-100 sm:text-3xl">
-            {content.viewpointTitle}
-          </h3>
-          <div className="mt-8 grid gap-5 sm:grid-cols-2">
-            {content.highlights.map((item) => (
-              <div key={item} className="about-principle">
-                {item}
+        <div className="border border-champagne-400/20 bg-graphite-900/60 p-7 shadow-[0_34px_110px_rgba(0,0,0,0.34)] sm:p-9 lg:p-11">
+          <div className="border-b border-graphite-100/10 pb-8">
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-champagne-400/75">Način razmišljanja</p>
+            <h3 className="mt-4 font-display text-2xl font-semibold leading-tight text-graphite-100 sm:text-3xl">
+              Način razmišljanja
+            </h3>
+            <p className="mt-5 max-w-xl text-base leading-8 text-graphite-100/70">
+              Sustav promatramo kroz odluke, odgovornosti, podatke i provedbu.
+            </p>
+          </div>
+          <div className="divide-y divide-graphite-100/10">
+            {principles.map((item, index) => (
+              <div key={item} className="group grid grid-cols-[3.2rem_1fr] items-center gap-5 py-5">
+                <span className="font-display text-xs font-semibold tracking-[0.22em] text-champagne-400/80">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <span className="font-display text-lg font-semibold leading-7 text-graphite-100/90 transition duration-300 group-hover:text-champagne-100">
+                  {item}
+                </span>
               </div>
             ))}
           </div>
-          <p className="mt-8 border-l border-champagne-400/45 bg-graphite-950/70 p-6 font-display text-xl leading-8 text-graphite-100 shadow-[0_20px_60px_rgba(0,0,0,0.22)] sm:text-2xl sm:leading-9">
+          <p className="mt-8 border-l border-champagne-400/50 bg-graphite-950/75 p-7 font-display text-xl leading-8 text-graphite-100 shadow-[0_22px_70px_rgba(0,0,0,0.26)] sm:text-2xl sm:leading-9">
             {content.closing.map((line) => (
               <span key={line} className="block">
                 {line}
@@ -236,7 +255,7 @@ function AboutSection({ content, cta }) {
 
 function ExpertiseSection({ content }) {
   return (
-    <section className="section-pad bg-stone-100/80">
+    <section className="section-pad section-ivory">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionHeading eyebrow={content.eyebrow} title={content.title} />
         <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -255,7 +274,7 @@ function ExpertiseSection({ content }) {
 
 function SignalSection({ signals, results }) {
   return (
-    <section className="section-pad bg-olive-100/45">
+    <section className="section-pad section-olive">
       <div className="mx-auto grid max-w-7xl gap-8 px-5 lg:grid-cols-2 lg:px-8">
         <div className="signal-panel">
           <p className="eyebrow">{signals.eyebrow}</p>
@@ -333,7 +352,7 @@ function App() {
   };
 
   return (
-    <main className="min-h-screen overflow-x-hidden bg-stone-50 text-graphite-950">
+    <main className="min-h-screen overflow-x-hidden bg-[#efeee7] text-graphite-950">
       <Header />
 
       <section id="pocetna" className="relative scroll-mt-24 overflow-hidden bg-graphite-950 pt-32 text-graphite-100 lg:pt-40">
@@ -363,7 +382,7 @@ function App() {
       </section>
       <HeroCards items={heroCards} />
 
-      <section id="usluge" className="section-pad scroll-mt-24 bg-stone-100/80">
+      <section id="usluge" className="section-pad section-ivory scroll-mt-24">
         <SectionHeading
           eyebrow={services.eyebrow}
           title={services.title}
@@ -387,7 +406,7 @@ function App() {
 
       <PrincipleSection content={principles} />
 
-      <section id="kako-radimo" className="scroll-mt-24 bg-graphite-950 py-20 text-graphite-100 sm:py-24 lg:py-32">
+      <section id="kako-radimo" className="relative scroll-mt-24 bg-graphite-950 py-20 text-graphite-100 sm:py-24 lg:py-32">
         <div className="mx-auto grid max-w-7xl gap-14 px-5 lg:grid-cols-[0.86fr_1fr] lg:px-8">
           <div>
             <p className="eyebrow text-champagne-400">{process.eyebrow}</p>
@@ -418,7 +437,7 @@ function App() {
 
       <SignalSection signals={signals} results={results} />
 
-      <section id="za-koga" className="section-pad scroll-mt-24 bg-olive-100/60">
+      <section id="za-koga" className="section-pad section-olive scroll-mt-24">
         <div className="mx-auto grid max-w-7xl gap-14 px-5 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
           <div>
             <p className="eyebrow">{audiences.eyebrow}</p>
@@ -462,7 +481,7 @@ function App() {
         </div>
       </section>
 
-      <section id="kontakt" className="scroll-mt-24 bg-stone-100 py-24 sm:py-28 lg:py-36">
+      <section id="kontakt" className="section-ivory scroll-mt-24 py-24 sm:py-28 lg:py-36">
         <div className="mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
           <div>
             <p className="eyebrow">{contact.eyebrow}</p>
@@ -487,7 +506,7 @@ function App() {
               </span>
             </div>
           </div>
-          <form className="border border-graphite-950/10 bg-white p-6 shadow-premium sm:p-10" onSubmit={handleContactSubmit}>
+          <form className="border border-graphite-950/10 bg-[#fbfaf5] p-6 shadow-[0_28px_90px_rgba(21,21,18,0.12)] sm:p-10" onSubmit={handleContactSubmit}>
             <div className="grid gap-5 sm:grid-cols-2">
               <label className="field">
                 {contact.form.fields.name.label}
