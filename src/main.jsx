@@ -122,33 +122,34 @@ function HeroGraphic() {
   const visualCards = [visual.before, visual.after];
 
   return (
-    <div className="hero-visual relative overflow-hidden bg-graphite-900 shadow-premium">
-      <div className="absolute inset-0 hero-photo-vignette" />
-      <div className="absolute inset-0 architectural-grid opacity-25" />
-      <div className="absolute inset-x-6 top-6 h-px bg-champagne-400/35" />
-      <div className="absolute bottom-6 right-6 top-6 w-px bg-champagne-400/30" />
+    <div className="relative overflow-hidden border border-champagne-400/20 bg-graphite-900 shadow-[0_34px_95px_rgba(0,0,0,0.34)]">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_16%,rgba(203,185,135,0.10),transparent_28%),linear-gradient(135deg,rgba(239,238,231,0.045),transparent_38%),linear-gradient(180deg,rgba(21,21,18,0.08),rgba(21,21,18,0.52))]" />
 
-      <div className="relative grid min-h-[430px] gap-5 p-5 sm:min-h-[520px] sm:p-7 lg:min-h-[620px] lg:content-center">
-        <div className="inline-flex w-fit items-center gap-3 border border-champagne-400/35 bg-graphite-950/90 px-4 py-3 text-xs font-semibold uppercase tracking-[0.22em] text-champagne-400 shadow-[0_18px_50px_rgba(0,0,0,0.2)]">
-          <Compass size={16} />
+      <div className="relative grid min-h-[430px] gap-6 p-6 sm:min-h-[500px] sm:p-8 lg:min-h-[580px] lg:content-center lg:gap-7 lg:p-10">
+        <div className="inline-flex w-fit items-center gap-2 border border-champagne-400/20 bg-graphite-950/70 px-3.5 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-champagne-400/80 shadow-[0_14px_38px_rgba(0,0,0,0.18)]">
+          <Compass size={13} />
           {visual.badge}
         </div>
-        <div className="grid gap-5 lg:grid-cols-2">
+        <div className="grid gap-5 lg:grid-cols-2 lg:gap-6">
           {visualCards.map((card, index) => (
             <article
               key={card.title}
-              className={`before-after-card ${index === 1 ? 'before-after-card-positive' : ''}`}
+              className={`relative overflow-hidden border p-7 shadow-[0_22px_64px_rgba(0,0,0,0.24)] transition duration-500 hover:-translate-y-1 sm:p-8 ${
+                index === 1
+                  ? 'border-[#6b7a3f]/40 bg-[#252b1d]/80 hover:border-champagne-400/40'
+                  : 'border-graphite-100/10 bg-graphite-950/80 hover:border-champagne-400/30'
+              }`}
             >
-              <span className="text-xs font-semibold uppercase tracking-[0.22em] text-champagne-400/75">
+              <span className="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-champagne-400/80">
                 {String(index + 1).padStart(2, '0')}
               </span>
-              <h3 className="mt-5 font-display text-2xl font-semibold leading-[1.18] text-graphite-100">
+              <h3 className="mt-5 font-display text-[1.55rem] font-semibold leading-[1.22] text-graphite-100">
                 {card.title}
               </h3>
-              <ul className="mt-8 grid gap-3.5 text-sm leading-6 text-graphite-100/75">
+              <ul className="mt-8 grid gap-4 text-[0.95rem] leading-7 text-graphite-100/80">
                 {card.items.map((item) => (
-                  <li key={item} className="flex gap-3">
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 bg-champagne-400/70" />
+                  <li key={item} className="flex gap-3.5">
+                    <span className="mt-2.5 h-1.5 w-1.5 shrink-0 bg-champagne-400/72" />
                     <span>{item}</span>
                   </li>
                 ))}
