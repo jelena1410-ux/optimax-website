@@ -17,7 +17,6 @@ import {
   X,
 } from 'lucide-react';
 import './styles.css';
-import heroArchitecture from './assets/optimaxHeroArchitecture';
 import { siteContent } from './content/siteContent';
 
 const serviceIcons = {
@@ -30,7 +29,7 @@ const serviceIcons = {
 function Logo() {
   return (
     <a href="#pocetna" className="group flex shrink-0 items-center" aria-label={siteContent.logo.ariaLabel}>
-      <span className="flex h-10 w-[138px] items-center justify-center border border-champagne-400/15 bg-stone-50/96 px-3 py-2 shadow-[0_10px_28px_rgba(0,0,0,0.16)] transition duration-300 group-hover:border-champagne-400/35 group-hover:bg-white sm:h-11 sm:w-[160px] lg:w-[176px]">
+      <span className="flex h-7 w-[116px] items-center justify-center border border-champagne-400/20 bg-stone-50/95 px-3 py-1.5 shadow-[0_10px_30px_rgba(0,0,0,0.18)] transition duration-300 group-hover:border-champagne-400/40 group-hover:bg-white sm:h-8 sm:w-[136px] lg:h-9 lg:w-[152px]">
         <img
           src="/optimax-logo-transparent.png"
           alt={siteContent.logo.alt}
@@ -56,8 +55,8 @@ function Header() {
   }, []);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-graphite-100/10 bg-graphite-950/90 backdrop-blur-xl">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 lg:px-8">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-champagne-400/15 bg-graphite-950/90 shadow-[0_18px_55px_rgba(0,0,0,0.18)] backdrop-blur-xl">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3.5 lg:px-8">
         <Logo />
         <nav className="hidden items-center gap-10 xl:gap-12 lg:flex">
           {siteContent.navigation.map(({ label, href }) => (
@@ -118,24 +117,17 @@ function HeroGraphic() {
 
   return (
     <div className="hero-visual relative overflow-hidden bg-graphite-900 shadow-premium">
-      <img
-        src={heroArchitecture}
-        alt=""
-        className="absolute inset-0 h-full w-full object-cover"
-        aria-hidden="true"
-      />
-      <div className="absolute inset-0 bg-graphite-950/30" />
       <div className="absolute inset-0 hero-photo-vignette" />
       <div className="absolute inset-0 architectural-grid opacity-25" />
       <div className="absolute inset-x-6 top-6 h-px bg-champagne-400/35" />
       <div className="absolute bottom-6 right-6 top-6 w-px bg-champagne-400/30" />
 
-      <div className="relative grid min-h-[430px] gap-4 p-5 sm:min-h-[520px] sm:p-7 lg:min-h-[620px] lg:content-center">
-        <div className="inline-flex w-fit items-center gap-3 border border-champagne-400/25 bg-graphite-950/55 px-4 py-3 text-xs font-semibold uppercase tracking-[0.22em] text-champagne-400 backdrop-blur-md">
+      <div className="relative grid min-h-[430px] gap-5 p-5 sm:min-h-[520px] sm:p-7 lg:min-h-[620px] lg:content-center">
+        <div className="inline-flex w-fit items-center gap-3 border border-champagne-400/35 bg-graphite-950/90 px-4 py-3 text-xs font-semibold uppercase tracking-[0.22em] text-champagne-400 shadow-[0_18px_50px_rgba(0,0,0,0.2)]">
           <Compass size={16} />
           {visual.badge}
         </div>
-        <div className="grid gap-4 lg:grid-cols-2">
+        <div className="grid gap-5 lg:grid-cols-2">
           {visualCards.map((card, index) => (
             <article
               key={card.title}
@@ -144,10 +136,10 @@ function HeroGraphic() {
               <span className="text-xs font-semibold uppercase tracking-[0.22em] text-champagne-400/75">
                 {String(index + 1).padStart(2, '0')}
               </span>
-              <h3 className="mt-5 font-display text-2xl font-semibold leading-tight text-graphite-100">
+              <h3 className="mt-5 font-display text-2xl font-semibold leading-[1.18] text-graphite-100">
                 {card.title}
               </h3>
-              <ul className="mt-7 grid gap-3 text-sm leading-6 text-graphite-100/70">
+              <ul className="mt-8 grid gap-3.5 text-sm leading-6 text-graphite-100/75">
                 {card.items.map((item) => (
                   <li key={item} className="flex gap-3">
                     <span className="mt-2 h-1.5 w-1.5 shrink-0 bg-champagne-400/70" />
@@ -181,7 +173,7 @@ function HeroCards({ items }) {
 
 function PrincipleSection({ content }) {
   return (
-    <section id="nacin-rada" className="section-pad scroll-mt-24 bg-stone-100/70">
+    <section id="nacin-rada" className="section-pad scroll-mt-24 bg-stone-100">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionHeading eyebrow={content.eyebrow} title={content.title} text={content.text} />
         <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -200,13 +192,13 @@ function PrincipleSection({ content }) {
 function AboutSection({ content, cta }) {
   return (
     <section id="o-nama" className="section-pad scroll-mt-24 bg-graphite-950 text-graphite-100">
-      <div className="mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
-        <div>
+      <div className="mx-auto grid max-w-7xl gap-14 px-5 lg:grid-cols-[0.92fr_1.08fr] lg:items-start lg:px-8">
+        <div className="max-w-2xl">
           <p className="eyebrow text-champagne-400">{content.eyebrow}</p>
-          <h2 className="mt-5 font-display text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
+          <h2 className="mt-5 font-display text-3xl font-semibold leading-[1.18] sm:text-4xl sm:leading-[1.16] lg:text-5xl">
             {content.title}
           </h2>
-          <div className="mt-7 space-y-5 text-lg leading-8 text-graphite-100/70">
+          <div className="mt-8 space-y-6 text-lg leading-9 text-graphite-100/75">
             {content.paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
@@ -216,14 +208,23 @@ function AboutSection({ content, cta }) {
             <ArrowRight className="shrink-0" size={18} />
           </a>
         </div>
-        <div className="grid content-start gap-4">
-          {content.highlights.map((item) => (
-            <div key={item} className="about-principle">
-              {item}
-            </div>
-          ))}
-          <p className="mt-4 border-l border-champagne-400/45 pl-6 font-display text-2xl leading-snug text-graphite-100">
-            {content.closing}
+        <div className="border border-champagne-400/15 bg-graphite-900/60 p-6 shadow-[0_28px_90px_rgba(0,0,0,0.28)] sm:p-8 lg:p-10">
+          <h3 className="font-display text-2xl font-semibold leading-tight text-graphite-100 sm:text-3xl">
+            {content.viewpointTitle}
+          </h3>
+          <div className="mt-8 grid gap-5 sm:grid-cols-2">
+            {content.highlights.map((item) => (
+              <div key={item} className="about-principle">
+                {item}
+              </div>
+            ))}
+          </div>
+          <p className="mt-8 border-l border-champagne-400/45 bg-graphite-950/70 p-6 font-display text-xl leading-8 text-graphite-100 shadow-[0_20px_60px_rgba(0,0,0,0.22)] sm:text-2xl sm:leading-9">
+            {content.closing.map((line) => (
+              <span key={line} className="block">
+                {line}
+              </span>
+            ))}
           </p>
         </div>
       </div>
@@ -233,7 +234,7 @@ function AboutSection({ content, cta }) {
 
 function ExpertiseSection({ content }) {
   return (
-    <section className="section-pad bg-stone-50">
+    <section className="section-pad bg-stone-100/80">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionHeading eyebrow={content.eyebrow} title={content.title} />
         <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -338,7 +339,7 @@ function App() {
         <div className="relative mx-auto grid max-w-7xl gap-14 px-5 pb-16 sm:gap-16 sm:pb-20 lg:grid-cols-[1fr_0.9fr] lg:px-8 lg:pb-24">
           <div className="flex flex-col justify-center">
             <p className="eyebrow text-champagne-400">{hero.eyebrow}</p>
-            <h1 className="mt-8 max-w-4xl font-display text-[2.2rem] font-semibold leading-[1.2] text-graphite-100 sm:text-[2.75rem] sm:leading-[1.18] lg:text-[4rem] lg:leading-[1.16]">
+            <h1 className="mt-8 max-w-4xl font-display text-[2.35rem] font-semibold leading-[1.18] text-graphite-100 sm:text-[3rem] sm:leading-[1.16] lg:text-[4.35rem] lg:leading-[1.12]">
               {hero.title}
             </h1>
             <p className="mt-9 max-w-2xl text-lg leading-8 text-graphite-100/75">
@@ -360,7 +361,7 @@ function App() {
       </section>
       <HeroCards items={heroCards} />
 
-      <section id="usluge" className="section-pad scroll-mt-24">
+      <section id="usluge" className="section-pad scroll-mt-24 bg-stone-100/80">
         <SectionHeading
           eyebrow={services.eyebrow}
           title={services.title}
@@ -415,7 +416,7 @@ function App() {
 
       <SignalSection signals={signals} results={results} />
 
-      <section id="za-koga" className="section-pad scroll-mt-24 bg-olive-100/50">
+      <section id="za-koga" className="section-pad scroll-mt-24 bg-olive-100/60">
         <div className="mx-auto grid max-w-7xl gap-14 px-5 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
           <div>
             <p className="eyebrow">{audiences.eyebrow}</p>
@@ -436,8 +437,8 @@ function App() {
 
       <section id="podrska" className="section-pad scroll-mt-24">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
-          <div className="grid overflow-hidden border border-graphite-950/10 bg-graphite-950 shadow-premium lg:grid-cols-[0.95fr_1.05fr]">
-            <div className="p-8 text-graphite-100 sm:p-12 lg:p-16">
+          <div className="grid items-stretch overflow-hidden border border-champagne-400/15 bg-graphite-950 shadow-premium lg:grid-cols-[0.92fr_1.08fr]">
+            <div className="flex flex-col justify-center p-8 text-graphite-100 sm:p-12 lg:p-16">
               <p className="eyebrow text-champagne-400">{strategicSupport.eyebrow}</p>
               <h2 className="mt-5 font-display text-3xl font-semibold sm:text-4xl lg:text-5xl">
                 {strategicSupport.title}
@@ -448,7 +449,7 @@ function App() {
             </div>
             <div className="grid gap-px bg-graphite-100/10 p-px sm:grid-cols-2">
               {strategicSupport.packages.map(({ title, text }) => (
-                <div key={title} className="bg-graphite-900 p-8">
+                <div key={title} className="flex h-full flex-col bg-graphite-900 p-8 transition duration-300 hover:bg-graphite-900/85 sm:p-9">
                   <Target className="text-champagne-400" size={24} />
                   <h3 className="mt-8 font-display text-xl font-semibold text-graphite-100">{title}</h3>
                   <p className="mt-4 leading-7 text-graphite-100/70">{text}</p>
@@ -459,7 +460,7 @@ function App() {
         </div>
       </section>
 
-      <section id="kontakt" className="scroll-mt-24 bg-stone-100 py-20 sm:py-24 lg:py-32">
+      <section id="kontakt" className="scroll-mt-24 bg-stone-100 py-24 sm:py-28 lg:py-36">
         <div className="mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
           <div>
             <p className="eyebrow">{contact.eyebrow}</p>
