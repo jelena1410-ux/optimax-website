@@ -12,8 +12,8 @@
   body {
     margin: 0;
     background:
-      linear-gradient(180deg, rgba(238, 230, 208, 0.34), transparent 520px),
-      #fafaf7;
+      linear-gradient(180deg, rgba(203, 185, 135, 0.16), transparent 560px),
+      #efeee7;
     color: #151512;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -35,35 +35,35 @@
   }
 
   .section-pad {
-    @apply py-24 sm:py-28 lg:py-36;
+    @apply py-28 sm:py-32 lg:py-40;
   }
 
   .service-card {
-    @apply relative overflow-hidden border border-graphite-950/10 bg-white/90 p-7 shadow-[0_18px_50px_rgba(21,21,18,0.06)] transition duration-500 hover:-translate-y-2 hover:border-champagne-400/45 hover:shadow-[0_30px_90px_rgba(21,21,18,0.14)] sm:p-8;
+    @apply relative overflow-hidden border border-graphite-950/10 bg-stone-50/95 p-8 shadow-[0_20px_60px_rgba(21,21,18,0.08)] transition duration-500 hover:-translate-y-2 hover:border-champagne-400/50 hover:bg-white hover:shadow-[0_34px_95px_rgba(21,21,18,0.16)] sm:p-9;
   }
 
   .hero-service-card {
-    @apply relative overflow-hidden border border-graphite-100/10 bg-graphite-900/80 p-7 shadow-[0_20px_70px_rgba(0,0,0,0.2)] transition duration-500 hover:-translate-y-1 hover:border-olive-600/45 hover:bg-graphite-900 sm:p-8;
+    @apply relative overflow-hidden border border-graphite-100/10 bg-graphite-900/90 p-8 shadow-[0_22px_80px_rgba(0,0,0,0.24)] transition duration-500 hover:-translate-y-1.5 hover:border-olive-600/50 hover:bg-graphite-900 hover:shadow-[0_30px_95px_rgba(0,0,0,0.32)] sm:p-9;
   }
 
   .before-after-card {
-    @apply relative overflow-hidden border border-graphite-100/15 bg-graphite-950/60 p-6 shadow-[0_26px_70px_rgba(0,0,0,0.2)] backdrop-blur-md transition duration-500 sm:p-7;
+    @apply relative overflow-hidden border border-champagne-400/25 bg-graphite-950 p-7 shadow-[0_28px_78px_rgba(0,0,0,0.34)] transition duration-500 hover:-translate-y-1 hover:border-champagne-400/50 hover:shadow-[0_36px_105px_rgba(0,0,0,0.42)] sm:p-8;
   }
 
   .before-after-card-positive {
-    @apply border-olive-600/45 bg-olive-900/45;
+    @apply border-olive-500/50 bg-olive-900;
   }
 
   .principle-card {
-    @apply border border-graphite-950/10 bg-white/80 p-7 shadow-[0_16px_48px_rgba(21,21,18,0.055)] transition duration-300 hover:border-olive-700/25 hover:bg-white hover:shadow-[0_24px_70px_rgba(21,21,18,0.1)];
+    @apply border border-graphite-950/10 bg-stone-50/90 p-8 shadow-[0_18px_55px_rgba(21,21,18,0.07)] transition duration-300 hover:-translate-y-1.5 hover:border-olive-700/30 hover:bg-white hover:shadow-[0_28px_78px_rgba(21,21,18,0.12)];
   }
 
   .about-principle {
-    @apply border border-graphite-100/10 bg-graphite-900/80 px-6 py-5 font-display text-xl font-semibold text-graphite-100 shadow-[0_18px_55px_rgba(0,0,0,0.18)];
+    @apply min-h-[7rem] border border-graphite-100/10 bg-graphite-950/80 px-7 py-6 font-display text-xl font-semibold leading-7 text-graphite-100 shadow-[0_20px_62px_rgba(0,0,0,0.26)] transition duration-300 hover:-translate-y-1 hover:border-champagne-400/35 hover:bg-graphite-950;
   }
 
   .signal-panel {
-    @apply border border-graphite-950/10 bg-white/80 p-7 shadow-[0_20px_70px_rgba(21,21,18,0.08)] sm:p-9;
+    @apply border border-graphite-950/10 bg-stone-50/90 p-8 shadow-[0_24px_78px_rgba(21,21,18,0.09)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_30px_92px_rgba(21,21,18,0.13)] sm:p-10;
   }
 
   .signal-panel-dark {
@@ -71,7 +71,7 @@
   }
 
   .compact-row {
-    @apply flex items-start gap-3 border border-graphite-950/10 bg-stone-50/80 p-4 text-sm font-medium leading-6 text-graphite-800;
+    @apply flex items-start gap-3 border border-graphite-950/10 bg-stone-50/95 p-4 text-sm font-medium leading-6 text-graphite-800 shadow-[0_10px_28px_rgba(21,21,18,0.04)] transition duration-300 hover:border-olive-700/25 hover:bg-white;
   }
 
   .compact-row svg {
@@ -79,7 +79,7 @@
   }
 
   .result-pill {
-    @apply border border-graphite-100/10 bg-graphite-900 px-4 py-4 text-sm font-semibold leading-6 text-graphite-100/80;
+    @apply border border-graphite-100/10 bg-graphite-900 px-5 py-4 text-sm font-semibold leading-6 text-graphite-100/80 shadow-[0_12px_34px_rgba(0,0,0,0.16)] transition duration-300 hover:-translate-y-1 hover:border-champagne-400/25;
   }
 
   .metric {
@@ -87,7 +87,7 @@
   }
 
   .process-row {
-    @apply grid grid-cols-[3.5rem_1fr] gap-4 border border-graphite-100/10 bg-graphite-900/70 p-5 text-base leading-7 text-graphite-100/75 sm:grid-cols-[4.5rem_1fr] sm:gap-5 sm:p-6 sm:text-lg sm:leading-8;
+    @apply grid grid-cols-[3.5rem_1fr] gap-4 border border-graphite-100/10 bg-graphite-900/80 p-6 text-base leading-7 text-graphite-100/80 shadow-[0_18px_52px_rgba(0,0,0,0.18)] transition duration-300 hover:-translate-y-1 hover:border-champagne-400/25 hover:bg-graphite-900 sm:grid-cols-[4.5rem_1fr] sm:gap-5 sm:p-7 sm:text-lg sm:leading-8;
   }
 
   .process-index {
@@ -95,7 +95,7 @@
   }
 
   .audience-row {
-    @apply flex gap-4 border border-graphite-950/10 bg-white/75 p-5 text-base leading-7 text-graphite-800 shadow-[0_16px_45px_rgba(21,21,18,0.05)] transition duration-300 hover:border-olive-700/25 hover:bg-white sm:p-6 sm:text-lg sm:leading-8;
+    @apply flex gap-4 border border-graphite-950/10 bg-stone-50/90 p-6 text-base leading-7 text-graphite-800 shadow-[0_18px_55px_rgba(21,21,18,0.07)] transition duration-300 hover:-translate-y-1 hover:border-olive-700/30 hover:bg-white hover:shadow-[0_26px_76px_rgba(21,21,18,0.12)] sm:p-7 sm:text-lg sm:leading-8;
   }
 
   .contact-link {
@@ -103,13 +103,19 @@
   }
 
   .field {
-    @apply grid min-w-0 gap-2 text-sm font-semibold text-graphite-800;
+    @apply grid min-w-0 gap-2.5 text-sm font-semibold text-graphite-800;
   }
 
   .field input,
   .field textarea {
-    @apply w-full min-w-0 border border-graphite-950/10 bg-stone-50 px-4 py-3 font-normal text-graphite-950 outline-none transition duration-300 placeholder:text-graphite-700/40 focus:border-olive-700 focus:bg-white focus:ring-2 focus:ring-olive-700/20;
+    @apply w-full min-w-0 border border-graphite-950/15 bg-stone-50 px-4 py-4 font-normal leading-6 text-graphite-950 outline-none shadow-[inset_0_1px_0_rgba(255,255,255,0.65)] transition duration-300 placeholder:text-graphite-700/40 focus:border-champagne-400 focus:bg-white focus:ring-2 focus:ring-champagne-400/30;
   }
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
 }
 
 .nav-link::after {
@@ -156,7 +162,9 @@
 
 .header-cta {
   border: 1px solid rgba(203, 185, 135, 0.36);
-  box-shadow: 0 10px 30px rgba(203, 185, 135, 0);
+  background: #cbb987;
+  color: #151512;
+  box-shadow: 0 16px 42px rgba(203, 185, 135, 0.22);
 }
 
 .premium-button:hover {
@@ -167,9 +175,9 @@
 
 .header-cta:hover {
   border-color: rgba(203, 185, 135, 0.72);
-  background: rgba(203, 185, 135, 0.08);
-  color: #efe6c4;
-  box-shadow: 0 0 28px rgba(203, 185, 135, 0.14);
+  background: #d8c895;
+  color: #151512;
+  box-shadow: 0 0 0 1px rgba(203, 185, 135, 0.2), 0 0 34px rgba(203, 185, 135, 0.22);
 }
 
 .premium-button-secondary:hover {
@@ -182,7 +190,7 @@
 .premium-submit:hover {
   background: #303720;
   transform: translateY(-2px);
-  box-shadow: 0 20px 52px rgba(48, 55, 32, 0.2);
+  box-shadow: 0 0 0 1px rgba(203, 185, 135, 0.2), 0 24px 68px rgba(48, 55, 32, 0.26);
 }
 
 .service-card::before {
@@ -227,7 +235,8 @@
 }
 
 .hero-visual {
-  border: 1px solid rgba(239, 238, 231, 0.12);
+  border: 1px solid rgba(203, 185, 135, 0.18);
+  box-shadow: 0 34px 110px rgba(0, 0, 0, 0.34);
 }
 
 .hero-visual::before {
@@ -241,9 +250,9 @@
 
 .hero-photo-vignette {
   background:
-    linear-gradient(90deg, rgba(21, 21, 18, 0.62), transparent 42%),
-    linear-gradient(0deg, rgba(21, 21, 18, 0.68), transparent 48%),
-    radial-gradient(circle at 78% 18%, rgba(203, 185, 135, 0.12), transparent 28%);
+    linear-gradient(90deg, rgba(21, 21, 18, 0.74), rgba(21, 21, 18, 0.34) 58%),
+    linear-gradient(0deg, rgba(21, 21, 18, 0.78), rgba(21, 21, 18, 0.18) 52%),
+    radial-gradient(circle at 78% 18%, rgba(203, 185, 135, 0.08), transparent 30%);
 }
 
 .hero-lines {
