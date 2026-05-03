@@ -12,8 +12,9 @@
   body {
     margin: 0;
     background:
-      linear-gradient(180deg, rgba(203, 185, 135, 0.16), transparent 560px),
-      #efeee7;
+      radial-gradient(circle at 18% -8%, rgba(203, 185, 135, 0.16), transparent 34rem),
+      linear-gradient(180deg, #151512 0, #151512 28rem, #ede9dd 54rem),
+      #ede9dd;
     color: #151512;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -35,15 +36,15 @@
   }
 
   .section-pad {
-    @apply py-28 sm:py-32 lg:py-40;
+    @apply py-28 sm:py-36 lg:py-44;
   }
 
   .service-card {
-    @apply relative overflow-hidden border border-graphite-950/10 bg-stone-50/95 p-8 shadow-[0_20px_60px_rgba(21,21,18,0.08)] transition duration-500 hover:-translate-y-2 hover:border-champagne-400/50 hover:bg-white hover:shadow-[0_34px_95px_rgba(21,21,18,0.16)] sm:p-9;
+    @apply relative overflow-hidden border border-graphite-950/10 bg-[#f8f5ec]/95 p-9 shadow-[0_24px_72px_rgba(21,21,18,0.1)] transition duration-500 hover:-translate-y-2 hover:border-champagne-400/40 hover:bg-[#fffdf7] hover:shadow-[0_38px_110px_rgba(21,21,18,0.18)] sm:p-10;
   }
 
   .hero-service-card {
-    @apply relative overflow-hidden border border-graphite-100/10 bg-graphite-900/90 p-8 shadow-[0_22px_80px_rgba(0,0,0,0.24)] transition duration-500 hover:-translate-y-1.5 hover:border-olive-600/50 hover:bg-graphite-900 hover:shadow-[0_30px_95px_rgba(0,0,0,0.32)] sm:p-9;
+    @apply relative overflow-hidden border border-graphite-100/10 bg-graphite-900/85 p-8 shadow-[0_24px_84px_rgba(0,0,0,0.26)] transition duration-500 hover:-translate-y-1.5 hover:border-champagne-400/30 hover:bg-graphite-900 hover:shadow-[0_34px_110px_rgba(0,0,0,0.36)] sm:p-9;
   }
 
   .before-after-card {
@@ -55,23 +56,23 @@
   }
 
   .principle-card {
-    @apply border border-graphite-950/10 bg-stone-50/90 p-8 shadow-[0_18px_55px_rgba(21,21,18,0.07)] transition duration-300 hover:-translate-y-1.5 hover:border-olive-700/30 hover:bg-white hover:shadow-[0_28px_78px_rgba(21,21,18,0.12)];
+    @apply border border-graphite-950/10 bg-[#f7f3e9]/95 p-9 shadow-[0_20px_62px_rgba(21,21,18,0.08)] transition duration-300 hover:-translate-y-1.5 hover:border-olive-700/40 hover:bg-[#fffdf7] hover:shadow-[0_30px_90px_rgba(21,21,18,0.14)];
   }
 
   .about-principle {
-    @apply min-h-[7rem] border border-graphite-100/10 bg-graphite-950/80 px-7 py-6 font-display text-xl font-semibold leading-7 text-graphite-100 shadow-[0_20px_62px_rgba(0,0,0,0.26)] transition duration-300 hover:-translate-y-1 hover:border-champagne-400/35 hover:bg-graphite-950;
+    @apply min-h-[7rem] border border-graphite-100/10 bg-graphite-950/80 px-7 py-6 font-display text-xl font-semibold leading-7 text-graphite-100 shadow-[0_20px_62px_rgba(0,0,0,0.26)] transition duration-300 hover:-translate-y-1 hover:border-champagne-400/40 hover:bg-graphite-950;
   }
 
   .signal-panel {
-    @apply border border-graphite-950/10 bg-stone-50/90 p-8 shadow-[0_24px_78px_rgba(21,21,18,0.09)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_30px_92px_rgba(21,21,18,0.13)] sm:p-10;
+    @apply border border-graphite-950/10 bg-[#f8f5ec]/95 p-9 shadow-[0_26px_86px_rgba(21,21,18,0.11)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_34px_104px_rgba(21,21,18,0.16)] sm:p-11;
   }
 
   .signal-panel-dark {
-    @apply border-graphite-100/10 bg-graphite-950 text-graphite-100;
+    @apply border-graphite-100/10 bg-graphite-950 text-graphite-100 shadow-[0_30px_98px_rgba(0,0,0,0.26)];
   }
 
   .compact-row {
-    @apply flex items-start gap-3 border border-graphite-950/10 bg-stone-50/95 p-4 text-sm font-medium leading-6 text-graphite-800 shadow-[0_10px_28px_rgba(21,21,18,0.04)] transition duration-300 hover:border-olive-700/25 hover:bg-white;
+    @apply flex items-start gap-3 border border-graphite-950/10 bg-[#fbf8ef]/95 p-4 text-sm font-medium leading-6 text-graphite-800 shadow-[0_12px_34px_rgba(21,21,18,0.05)] transition duration-300 hover:border-olive-700/30 hover:bg-[#fffdf7];
   }
 
   .compact-row svg {
@@ -95,7 +96,7 @@
   }
 
   .audience-row {
-    @apply flex gap-4 border border-graphite-950/10 bg-stone-50/90 p-6 text-base leading-7 text-graphite-800 shadow-[0_18px_55px_rgba(21,21,18,0.07)] transition duration-300 hover:-translate-y-1 hover:border-olive-700/30 hover:bg-white hover:shadow-[0_26px_76px_rgba(21,21,18,0.12)] sm:p-7 sm:text-lg sm:leading-8;
+    @apply flex gap-4 border border-graphite-950/10 bg-[#f8f5ec]/95 p-6 text-base leading-7 text-graphite-800 shadow-[0_20px_62px_rgba(21,21,18,0.08)] transition duration-300 hover:-translate-y-1 hover:border-olive-700/40 hover:bg-[#fffdf7] hover:shadow-[0_30px_86px_rgba(21,21,18,0.14)] sm:p-7 sm:text-lg sm:leading-8;
   }
 
   .contact-link {
@@ -108,8 +109,24 @@
 
   .field input,
   .field textarea {
-    @apply w-full min-w-0 border border-graphite-950/15 bg-stone-50 px-4 py-4 font-normal leading-6 text-graphite-950 outline-none shadow-[inset_0_1px_0_rgba(255,255,255,0.65)] transition duration-300 placeholder:text-graphite-700/40 focus:border-champagne-400 focus:bg-white focus:ring-2 focus:ring-champagne-400/30;
+    @apply w-full min-w-0 border border-graphite-950/15 bg-[#efeadf] px-4 py-4 font-normal leading-6 text-graphite-950 outline-none shadow-[inset_0_1px_0_rgba(255,255,255,0.72)] transition duration-300 placeholder:text-graphite-700/45 focus:border-champagne-400 focus:bg-[#fffdf7] focus:ring-2 focus:ring-champagne-400/25;
   }
+}
+
+.section-ivory {
+  position: relative;
+  background:
+    linear-gradient(180deg, rgba(21, 21, 18, 0.055), transparent 7rem),
+    radial-gradient(circle at 82% 0%, rgba(203, 185, 135, 0.12), transparent 24rem),
+    #ede9dd;
+}
+
+.section-olive {
+  position: relative;
+  background:
+    linear-gradient(180deg, rgba(21, 21, 18, 0.06), transparent 8rem),
+    radial-gradient(circle at 15% 18%, rgba(108, 123, 74, 0.14), transparent 24rem),
+    #e6e5d8;
 }
 
 h1,
@@ -157,7 +174,7 @@ h3 {
 
 .premium-button,
 .premium-submit {
-  box-shadow: 0 16px 44px rgba(203, 185, 135, 0.16);
+  box-shadow: 0 16px 48px rgba(203, 185, 135, 0.18);
 }
 
 .header-cta {
@@ -188,9 +205,9 @@ h3 {
 }
 
 .premium-submit:hover {
-  background: #303720;
+  background: #343c24;
   transform: translateY(-2px);
-  box-shadow: 0 0 0 1px rgba(203, 185, 135, 0.2), 0 24px 68px rgba(48, 55, 32, 0.26);
+  box-shadow: 0 0 0 1px rgba(203, 185, 135, 0.22), 0 24px 68px rgba(48, 55, 32, 0.28);
 }
 
 .service-card::before {
