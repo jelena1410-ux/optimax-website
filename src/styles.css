@@ -51,7 +51,7 @@
   }
 
   .before-after-card-positive {
-    @apply border-olive-500/50 bg-olive-900;
+    @apply border-[#6b7a3f]/50 bg-olive-900;
   }
 
   .principle-card {
