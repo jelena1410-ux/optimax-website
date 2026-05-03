@@ -36,15 +36,15 @@
   }
 
   .section-pad {
-    @apply py-20 sm:py-24 lg:py-32;
+    @apply py-16 sm:py-20 lg:py-28;
   }
 
   .service-card {
-    @apply relative overflow-hidden border border-graphite-950/10 bg-[#f5f1e7]/95 p-7 shadow-[0_18px_56px_rgba(21,21,18,0.08)] transition duration-500 hover:-translate-y-1.5 hover:border-champagne-400/40 hover:bg-[#fbf8ef] hover:shadow-[0_28px_82px_rgba(21,21,18,0.13)] sm:p-8;
+    @apply relative overflow-hidden border border-black/5 bg-[#f4f1e8]/95 p-6 shadow-[0_10px_30px_rgba(0,0,0,0.045)] transition duration-500 ease-out hover:-translate-y-0.5 hover:border-[#c6a85b]/40 hover:bg-[#fbf8ef] hover:shadow-[0_18px_46px_rgba(0,0,0,0.065)] sm:p-7;
   }
 
   .hero-service-card {
-    @apply relative overflow-hidden border border-graphite-100/10 bg-graphite-900/80 p-6 shadow-[0_18px_60px_rgba(0,0,0,0.22)] transition duration-500 hover:-translate-y-1 hover:border-champagne-400/30 hover:bg-graphite-900 hover:shadow-[0_26px_82px_rgba(0,0,0,0.3)] sm:p-7;
+    @apply relative overflow-hidden border border-white/10 bg-graphite-900/75 p-5 shadow-[0_16px_46px_rgba(0,0,0,0.2)] transition duration-500 ease-out hover:-translate-y-0.5 hover:border-white/20 hover:bg-graphite-900/90 hover:shadow-[0_22px_68px_rgba(0,0,0,0.28)] sm:p-6;
   }
 
   .before-after-card {
@@ -56,7 +56,7 @@
   }
 
   .principle-card {
-    @apply border border-graphite-950/10 bg-[#f5f1e7]/95 p-7 shadow-[0_16px_48px_rgba(21,21,18,0.07)] transition duration-300 hover:-translate-y-1 hover:border-olive-700/40 hover:bg-[#fbf8ef] hover:shadow-[0_24px_72px_rgba(21,21,18,0.12)];
+    @apply border border-black/5 bg-[#f4f1e8]/95 p-6 shadow-[0_10px_30px_rgba(0,0,0,0.045)] transition duration-500 ease-out hover:-translate-y-0.5 hover:border-[#c6a85b]/40 hover:bg-[#fbf8ef] hover:shadow-[0_18px_46px_rgba(0,0,0,0.065)] sm:p-7;
   }
 
   .about-principle {
@@ -64,7 +64,7 @@
   }
 
   .signal-panel {
-    @apply border border-graphite-950/10 bg-[#f5f1e7]/95 p-7 shadow-[0_20px_62px_rgba(21,21,18,0.09)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_28px_84px_rgba(21,21,18,0.13)] sm:p-8;
+    @apply border border-black/5 bg-[#f4f1e8]/95 p-6 shadow-[0_14px_42px_rgba(0,0,0,0.055)] transition duration-500 ease-out hover:-translate-y-0.5 hover:shadow-[0_20px_58px_rgba(0,0,0,0.08)] sm:p-7;
   }
 
   .signal-panel-dark {
@@ -72,7 +72,7 @@
   }
 
   .compact-row {
-    @apply flex items-start gap-3 border border-graphite-950/10 bg-[#fbf8ef]/90 p-3.5 text-sm font-medium leading-6 text-graphite-800 shadow-[0_10px_28px_rgba(21,21,18,0.045)] transition duration-300 hover:border-olive-700/30 hover:bg-[#fffdf7];
+    @apply flex items-start gap-3 border border-black/5 bg-[#fbf8ef]/70 p-3.5 text-sm font-medium leading-relaxed text-graphite-800 shadow-none transition duration-500 ease-out hover:border-[#c6a85b]/40 hover:bg-[#fffdf7];
   }
 
   .compact-row svg {
@@ -80,7 +80,7 @@
   }
 
   .result-pill {
-    @apply border border-graphite-100/10 bg-graphite-900 px-5 py-4 text-sm font-semibold leading-6 text-graphite-100/80 shadow-[0_12px_34px_rgba(0,0,0,0.16)] transition duration-300 hover:-translate-y-1 hover:border-champagne-400/25;
+    @apply border border-white/10 bg-graphite-900 px-5 py-4 text-sm font-semibold leading-6 text-graphite-100/80 shadow-[0_12px_34px_rgba(0,0,0,0.16)] transition duration-500 ease-out hover:-translate-y-0.5 hover:border-[#c6a85b]/40 hover:shadow-[0_0_30px_rgba(198,168,91,0.12)];
   }
 
   .metric {
@@ -88,15 +88,15 @@
   }
 
   .process-row {
-    @apply grid grid-cols-[3.2rem_1fr] gap-4 border border-graphite-100/10 bg-graphite-900/80 p-5 text-base leading-7 text-graphite-100/80 shadow-[0_16px_46px_rgba(0,0,0,0.16)] transition duration-300 hover:-translate-y-1 hover:border-champagne-400/25 hover:bg-graphite-900 sm:grid-cols-[4rem_1fr] sm:gap-5 sm:p-6;
+    @apply grid grid-cols-[2.7rem_1fr] gap-4 border-l border-white/10 bg-transparent py-1 pl-5 pr-2 text-sm leading-relaxed text-graphite-100/75 shadow-none transition duration-500 ease-out hover:translate-x-1 hover:border-[#c6a85b]/50 sm:grid-cols-[3.4rem_1fr] sm:gap-5 sm:pl-6;
   }
 
   .process-index {
-    @apply font-display text-xs font-semibold tracking-[0.18em] text-champagne-400 sm:text-sm sm:tracking-[0.22em];
+    @apply pt-1 font-display text-[0.68rem] font-semibold tracking-[0.14em] text-champagne-400/75 sm:text-xs sm:tracking-[0.18em];
   }
 
   .audience-row {
-    @apply flex gap-4 border border-graphite-950/10 bg-[#f5f1e7]/95 p-5 text-base leading-7 text-graphite-800 shadow-[0_16px_48px_rgba(21,21,18,0.07)] transition duration-300 hover:-translate-y-1 hover:border-olive-700/40 hover:bg-[#fbf8ef] hover:shadow-[0_24px_72px_rgba(21,21,18,0.12)] sm:p-6 sm:text-lg sm:leading-8;
+    @apply flex gap-4 border border-black/5 bg-[#f4f1e8]/95 p-5 text-[15px] leading-relaxed text-graphite-800 shadow-[0_10px_30px_rgba(0,0,0,0.045)] transition duration-500 ease-out hover:-translate-y-0.5 hover:border-[#c6a85b]/40 hover:bg-[#fbf8ef] hover:shadow-[0_18px_46px_rgba(0,0,0,0.065)] sm:p-6;
   }
 
   .contact-link {
@@ -109,26 +109,26 @@
 
   .field input,
   .field textarea {
-    @apply w-full min-w-0 border border-graphite-950/10 bg-[#efe9dd] px-4 py-3.5 font-normal leading-6 text-graphite-950 outline-none shadow-[inset_0_1px_0_rgba(255,255,255,0.68)] transition duration-300 placeholder:text-graphite-700/50 focus:border-champagne-400 focus:bg-[#fffdf7] focus:ring-2 focus:ring-champagne-400/25;
+    @apply w-full min-w-0 border border-black/10 bg-[#efe9dd] px-4 py-3.5 font-normal leading-6 text-graphite-950 outline-none shadow-[inset_0_1px_0_rgba(255,255,255,0.68)] transition duration-300 placeholder:text-graphite-700/50 hover:border-[#c6a85b]/40 focus:border-[#c6a85b] focus:bg-[#fffdf7] focus:ring-2 focus:ring-[#c6a85b]/25;
   }
 }
 
 .section-ivory {
   position: relative;
   background:
-    linear-gradient(180deg, rgba(21, 21, 18, 0.05), transparent 5.5rem),
-    radial-gradient(circle at 82% 0%, rgba(203, 185, 135, 0.11), transparent 22rem),
+    linear-gradient(180deg, #f6f4ef 0%, #f1eee7 100%),
+    radial-gradient(circle at 82% 0%, rgba(198, 168, 91, 0.09), transparent 22rem),
     radial-gradient(circle at 8% 88%, rgba(108, 123, 74, 0.07), transparent 18rem),
-    #e9e5d8;
+    #f3f1ea;
 }
 
 .section-olive {
   position: relative;
   background:
-    linear-gradient(180deg, rgba(21, 21, 18, 0.055), transparent 6rem),
+    linear-gradient(180deg, #f3f1ea 0%, #ebe8dc 100%),
     radial-gradient(circle at 15% 18%, rgba(108, 123, 74, 0.13), transparent 22rem),
-    radial-gradient(circle at 88% 92%, rgba(203, 185, 135, 0.1), transparent 19rem),
-    #e3e1d2;
+    radial-gradient(circle at 88% 92%, rgba(198, 168, 91, 0.1), transparent 19rem),
+    #ebe8dc;
 }
 
 h1,
@@ -176,7 +176,7 @@ h3 {
 
 .premium-button,
 .premium-submit {
-  box-shadow: 0 14px 40px rgba(203, 185, 135, 0.16);
+  box-shadow: 0 0 40px rgba(198, 168, 91, 0.15), 0 14px 34px rgba(0, 0, 0, 0.12);
 }
 
 .header-cta {
@@ -208,8 +208,8 @@ h3 {
 
 .premium-submit:hover {
   background: #343c24;
-  transform: translateY(-2px);
-  box-shadow: 0 0 0 1px rgba(203, 185, 135, 0.2), 0 20px 58px rgba(48, 55, 32, 0.25);
+  transform: translateY(-1px);
+  box-shadow: 0 0 0 1px rgba(198, 168, 91, 0.2), 0 0 42px rgba(198, 168, 91, 0.16);
 }
 
 .service-card::before {
@@ -219,7 +219,7 @@ h3 {
   left: 1.75rem;
   height: 1px;
   content: '';
-  background: linear-gradient(90deg, transparent, rgba(203, 185, 135, 0.72), transparent);
+  background: linear-gradient(90deg, transparent, rgba(198, 168, 91, 0.68), transparent);
   opacity: 0.58;
 }
 
@@ -276,10 +276,42 @@ h3 {
 
 .hero-lines {
   background:
-    linear-gradient(90deg, rgba(203, 185, 135, 0.07) 1px, transparent 1px),
-    linear-gradient(0deg, rgba(239, 238, 231, 0.045) 1px, transparent 1px),
-    radial-gradient(circle at 14% 22%, rgba(108, 123, 74, 0.18), transparent 34%);
+    linear-gradient(90deg, rgba(203, 185, 135, 0.045) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(239, 238, 231, 0.032) 1px, transparent 1px),
+    radial-gradient(circle at 14% 22%, rgba(108, 123, 74, 0.12), transparent 34%);
   background-size: 96px 96px, 96px 96px, auto;
+}
+
+.service-card-featured {
+  border-color: rgba(198, 168, 91, 0.32);
+  background: #fffdf8;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.06);
+}
+
+@media (min-width: 1024px) {
+  .service-card-featured {
+    transform: translateY(-0.35rem) scale(1.025);
+  }
+
+  .service-card-featured:hover {
+    transform: translateY(-0.55rem) scale(1.025);
+  }
+}
+
+.reveal {
+  animation: reveal-up 520ms ease-out backwards;
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .architectural-grid {
