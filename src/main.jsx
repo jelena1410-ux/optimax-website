@@ -28,18 +28,18 @@ const serviceIcons = {
 
 function Logo() {
   return (
-    <a href="#pocetna" className="group flex h-11 max-w-[13rem] shrink-0 items-center" aria-label={siteContent.logo.ariaLabel}>
+    <a href="#pocetna" className="group flex h-11 w-[8.5rem] shrink-0 items-center sm:w-[13.75rem]" aria-label={siteContent.logo.ariaLabel}>
       <span className="flex min-w-0 flex-col items-start justify-center leading-none">
-        <span className="flex min-w-0 items-baseline gap-2">
-          <span className="font-display text-[1.35rem] font-semibold tracking-[0.03em] text-graphite-100 transition duration-300 group-hover:text-white sm:text-[1.45rem]">
+        <span className="flex min-w-0 items-baseline gap-2.5">
+          <span className="font-display text-[1.55rem] font-semibold tracking-[0.02em] text-graphite-100 transition duration-300 group-hover:text-white sm:text-[1.72rem]">
             Opti<span className="text-champagne-400">MAX</span>
           </span>
-          <span className="text-[0.54rem] font-semibold uppercase tracking-[0.34em] text-graphite-100/72 transition duration-300 group-hover:text-champagne-200">
+          <span className="hidden text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-graphite-100/82 transition duration-300 group-hover:text-champagne-200 sm:inline">
             Consulting
           </span>
         </span>
-        <span className="mt-1 hidden text-[0.5rem] font-medium uppercase tracking-[0.28em] text-graphite-100/46 transition duration-300 group-hover:text-graphite-100/62 sm:block">
-          poslovna dijagnostika
+        <span className="mt-1.5 hidden text-[0.58rem] font-semibold uppercase tracking-[0.32em] text-graphite-100/58 transition duration-300 group-hover:text-graphite-100/72 sm:block">
+          Poslovna dijagnostika
         </span>
       </span>
     </a>
