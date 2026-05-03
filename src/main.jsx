@@ -28,18 +28,13 @@ const serviceIcons = {
 
 function Logo() {
   return (
-    <a href="#pocetna" className="group flex h-11 w-[8.5rem] shrink-0 items-center sm:w-[13.75rem]" aria-label={siteContent.logo.ariaLabel}>
+    <a href="#pocetna" className="group flex h-11 w-[8.25rem] shrink-0 items-center sm:w-[9.75rem]" aria-label={siteContent.logo.ariaLabel}>
       <span className="flex min-w-0 flex-col items-start justify-center leading-none">
-        <span className="flex min-w-0 items-baseline gap-2.5">
-          <span className="font-display text-[1.55rem] font-semibold tracking-[0.02em] text-graphite-100 transition duration-300 group-hover:text-white sm:text-[1.72rem]">
-            Opti<span className="text-champagne-400">MAX</span>
-          </span>
-          <span className="hidden text-[0.72rem] font-semibold uppercase tracking-[0.26em] text-graphite-100/90 transition duration-300 group-hover:text-champagne-200 sm:inline">
-            Consulting
-          </span>
+        <span className="font-display text-[1.55rem] font-semibold tracking-[0.02em] text-graphite-100 transition duration-300 group-hover:text-white sm:text-[1.72rem]">
+          Opti<span className="text-champagne-400">MAX</span>
         </span>
-        <span className="mt-1.5 hidden text-[0.62rem] font-semibold uppercase tracking-[0.32em] text-graphite-100/76 transition duration-300 group-hover:text-graphite-100/90 sm:block">
-          POSLOVNA ARHITEKTURA
+        <span className="mt-1 hidden text-[0.62rem] font-semibold uppercase tracking-[0.38em] text-graphite-100/82 transition duration-300 group-hover:text-champagne-200 sm:block">
+          Consulting
         </span>
       </span>
     </a>
@@ -345,7 +340,7 @@ function App() {
         <div className="absolute inset-0 hero-lines opacity-60" />
         <div className="relative mx-auto grid max-w-7xl gap-14 px-5 pb-16 sm:gap-16 sm:pb-20 lg:grid-cols-[1fr_0.9fr] lg:px-8 lg:pb-24">
           <div className="flex flex-col justify-center">
-            <p className="eyebrow text-champagne-400">{hero.eyebrow}</p>
+            <p className="eyebrow text-champagne-400">POSLOVNA ARHITEKTURA</p>
             <h1 className="mt-8 max-w-4xl font-display text-[2.35rem] font-semibold leading-[1.18] text-graphite-100 sm:text-[3rem] sm:leading-[1.16] lg:text-[4.35rem] lg:leading-[1.12]">
               {hero.title}
             </h1>
