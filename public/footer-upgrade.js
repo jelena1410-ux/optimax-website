@@ -27,7 +27,11 @@
       button.textContent.trim().includes('Postavke kolačića'),
     );
 
-    if (!document.querySelector('[data-optimax-trust]')) {
+    const trustAlreadyRendered = Array.from(document.querySelectorAll('section h2')).some((heading) =>
+      heading.textContent.trim().includes('Za poslovanje koje traži jasniji sustav.'),
+    );
+
+    if (!document.querySelector('[data-optimax-trust]') && !trustAlreadyRendered) {
       const trust = document.createElement('section');
       trust.dataset.optimaxTrust = 'true';
       trust.className = 'optimax-trust-section';
