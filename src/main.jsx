@@ -26,7 +26,9 @@ const serviceIcons = {
   shield: ShieldCheck,
 };
 
-function useScrollReveal() {
+const COOKIE_CONSENT_KEY = 'optimax-cookie-consent';
+
+function useScrollReveal(trigger) {
   React.useEffect(() => {
     const elements = Array.from(document.querySelectorAll('.reveal'));
     if (!elements.length) {
@@ -57,7 +59,21 @@ function useScrollReveal() {
     });
 
     return () => observer.disconnect();
+  }, [trigger]);
+}
+
+function useHashRoute() {
+  const getHash = () => window.location.hash || '#pocetna';
+  const [hash, setHash] = React.useState(getHash);
+
+  React.useEffect(() => {
+    const handleHashChange = () => setHash(getHash());
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
+
+  return hash;
 }
 
 function Logo() {
@@ -72,6 +88,92 @@ function Logo() {
         </span>
       </span>
     </a>
+  );
+}
+
+function LegalPageShell({ children }) {
+  return (
+    <section className="legal-page min-h-screen bg-graphite-950 px-5 pb-20 pt-32 text-graphite-100 lg:px-8 lg:pt-36">
+      <div className="mx-auto max-w-5xl">
+        <a href="#pocetna" className="inline-flex items-center gap-2 border-b border-champagne-400/30 pb-2 text-sm font-semibold text-champagne-300 transition hover:border-champagne-300 hover:text-champagne-100">
+          <ChevronRight className="rotate-180" size={16} />
+          Natrag na početnu
+        </a>
+        {children}
+      </div>
+    </section>
+  );
+}
+
+function PrivacyPolicy({ content }) {
+  return (
+    <LegalPageShell>
+      <article className="legal-card mt-10">
+        <p className="eyebrow text-champagne-400">{content.eyebrow}</p>
+        <h1 className="mt-5 font-display text-[2rem] font-semibold leading-tight tracking-tight text-[#f5f5f2] sm:text-[2.6rem]">
+          {content.title}
+        </h1>
+        <p className="mt-3 text-sm text-graphite-100/50">{content.updated}</p>
+        <p className="mt-8 max-w-3xl text-base leading-8 text-graphite-100/70">{content.intro}</p>
+        <div className="mt-10 grid gap-5">
+          {content.sections.map((section, index) => (
+            <section key={section.title} className="legal-section">
+              <span className="legal-index">{String(index + 1).padStart(2, '0')}</span>
+              <div>
+                <h2>{section.title}</h2>
+                <p>{section.text}</p>
+              </div>
+            </section>
+          ))}
+        </div>
+        <p className="mt-10 border-l border-champagne-400/40 bg-graphite-950/40 p-5 text-sm leading-7 text-graphite-100/70">
+          {content.note}
+        </p>
+      </article>
+    </LegalPageShell>
+  );
+}
+
+function CookiePolicy({ content }) {
+  return (
+    <LegalPageShell>
+      <article className="legal-card mt-10">
+        <p className="eyebrow text-champagne-400">{content.eyebrow}</p>
+        <h1 className="mt-5 font-display text-[2rem] font-semibold leading-tight tracking-tight text-[#f5f5f2] sm:text-[2.6rem]">
+          {content.title}
+        </h1>
+        <p className="mt-3 text-sm text-graphite-100/50">{content.updated}</p>
+        <p className="mt-8 max-w-3xl text-base leading-8 text-graphite-100/70">{content.intro}</p>
+        <div className="mt-10 grid gap-5">
+          {content.sections.map((section, index) => (
+            <section key={section.title} className="legal-section">
+              <span className="legal-index">{String(index + 1).padStart(2, '0')}</span>
+              <div>
+                <h2>{section.title}</h2>
+                <p>{section.text}</p>
+              </div>
+            </section>
+          ))}
+        </div>
+        <div className="mt-10 overflow-hidden border border-white/10">
+          <div className="grid bg-champagne-400/10 text-xs font-semibold uppercase tracking-[0.16em] text-champagne-300 sm:grid-cols-[0.8fr_1.5fr_0.9fr]">
+            <span className="p-4">Kategorija</span>
+            <span className="p-4">Svrha</span>
+            <span className="p-4">Status</span>
+          </div>
+          {content.table.map((row) => (
+            <div key={row.category} className="grid border-t border-white/10 text-sm leading-7 text-graphite-100/70 sm:grid-cols-[0.8fr_1.5fr_0.9fr]">
+              <strong className="p-4 font-semibold text-[#f5f5f2]">{row.category}</strong>
+              <span className="p-4">{row.purpose}</span>
+              <span className="p-4 text-champagne-300/90">{row.status}</span>
+            </div>
+          ))}
+        </div>
+        <p className="mt-10 border-l border-champagne-400/40 bg-graphite-950/40 p-5 text-sm leading-7 text-graphite-100/70">
+          {content.note}
+        </p>
+      </article>
+    </LegalPageShell>
   );
 }
 
@@ -366,6 +468,204 @@ function SignalSection({ signals, results }) {
   );
 }
 
+function CookieToggle({ checked, disabled = false, label, text, onChange }) {
+  return (
+    <div className="cookie-toggle-row">
+      <div>
+        <h3>{label}</h3>
+        <p>{text}</p>
+      </div>
+      <button
+        type="button"
+        className={`cookie-toggle ${checked ? 'is-on' : ''}`}
+        onClick={() => !disabled && onChange(!checked)}
+        disabled={disabled}
+        aria-pressed={checked}
+      >
+        <span />
+      </button>
+    </div>
+  );
+}
+
+function CookieSettingsModal({ open, content, initialPreferences, onSave, onAcceptAll, onRejectOptional, onClose }) {
+  const [preferences, setPreferences] = React.useState(initialPreferences);
+
+  React.useEffect(() => {
+    if (open) {
+      setPreferences(initialPreferences);
+    }
+  }, [initialPreferences, open]);
+
+  React.useEffect(() => {
+    if (!open) {
+      return undefined;
+    }
+
+    const handleEscape = (event) => {
+      if (event.key === 'Escape') {
+        onClose();
+      }
+    };
+
+    window.addEventListener('keydown', handleEscape);
+    return () => window.removeEventListener('keydown', handleEscape);
+  }, [onClose, open]);
+
+  if (!open) {
+    return null;
+  }
+
+  return (
+    <div className="cookie-modal-backdrop" role="presentation">
+      <div className="cookie-modal" role="dialog" aria-modal="true" aria-labelledby="cookie-settings-title">
+        <div className="flex items-start justify-between gap-5">
+          <div>
+            <p className="eyebrow text-champagne-400">Privatnost</p>
+            <h2 id="cookie-settings-title">{content.modalTitle}</h2>
+          </div>
+          <button type="button" className="cookie-close" onClick={onClose} aria-label="Zatvori postavke kolačića">
+            <X size={18} />
+          </button>
+        </div>
+        <p className="mt-5 text-sm leading-7 text-graphite-100/70">{content.modalText}</p>
+        <div className="mt-7 grid gap-4">
+          <CookieToggle
+            checked
+            disabled
+            label={content.categories.necessary.title}
+            text={content.categories.necessary.text}
+          />
+          <CookieToggle
+            checked={preferences.analytics}
+            label={content.categories.analytics.title}
+            text={content.categories.analytics.text}
+            onChange={(value) => setPreferences((current) => ({ ...current, analytics: value }))}
+          />
+          <CookieToggle
+            checked={preferences.marketing}
+            label={content.categories.marketing.title}
+            text={content.categories.marketing.text}
+            onChange={(value) => setPreferences((current) => ({ ...current, marketing: value }))}
+          />
+        </div>
+        <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <button type="button" className="cookie-action cookie-action-primary" onClick={() => onSave(preferences)}>
+            {content.buttons.save}
+          </button>
+          <button type="button" className="cookie-action" onClick={onAcceptAll}>
+            {content.buttons.acceptAll}
+          </button>
+          <button type="button" className="cookie-action cookie-action-quiet" onClick={onRejectOptional}>
+            {content.buttons.rejectOptional}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function CookieConsent({ content, settingsOpen, onSettingsOpen, onSettingsClose }) {
+  const defaultPreferences = React.useMemo(() => ({ analytics: false, marketing: false }), []);
+  const [visible, setVisible] = React.useState(false);
+  const [preferences, setPreferences] = React.useState(defaultPreferences);
+
+  React.useEffect(() => {
+    try {
+      const stored = window.localStorage.getItem(COOKIE_CONSENT_KEY);
+      if (!stored) {
+        setVisible(true);
+        return;
+      }
+
+      const parsed = JSON.parse(stored);
+      setPreferences({
+        analytics: Boolean(parsed.analytics),
+        marketing: Boolean(parsed.marketing),
+      });
+    } catch {
+      setVisible(true);
+    }
+  }, []);
+
+  React.useEffect(() => {
+    // TODO: Ako se kasnije uvodi analytics alat, učitati ga uvjetno tek kada je preferences.analytics === true.
+    // Trenutno se ne učitavaju Google Analytics, Meta Pixel ni druge ne-nužne skripte.
+  }, [preferences.analytics, preferences.marketing]);
+
+  const storeConsent = (nextPreferences) => {
+    const nextConsent = {
+      necessary: true,
+      analytics: Boolean(nextPreferences.analytics),
+      marketing: Boolean(nextPreferences.marketing),
+      savedAt: new Date().toISOString(),
+    };
+
+    window.localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(nextConsent));
+    setPreferences({ analytics: nextConsent.analytics, marketing: nextConsent.marketing });
+    setVisible(false);
+    onSettingsClose();
+  };
+
+  const acceptAll = () => storeConsent({ analytics: true, marketing: true });
+  const rejectOptional = () => storeConsent(defaultPreferences);
+
+  return (
+    <>
+      {visible && (
+        <div className="cookie-banner" role="region" aria-label="Obavijest o kolačićima">
+          <div>
+            <p>{content.bannerText}</p>
+            <a href="#politika-kolacica">Saznajte više u Politici kolačića.</a>
+          </div>
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <button type="button" className="cookie-action cookie-action-primary" onClick={acceptAll}>
+              {content.buttons.acceptAll}
+            </button>
+            <button type="button" className="cookie-action cookie-action-quiet" onClick={rejectOptional}>
+              {content.buttons.rejectOptional}
+            </button>
+            <button type="button" className="cookie-action" onClick={onSettingsOpen}>
+              {content.buttons.settings}
+            </button>
+          </div>
+        </div>
+      )}
+      <CookieSettingsModal
+        open={settingsOpen}
+        content={content}
+        initialPreferences={preferences}
+        onSave={storeConsent}
+        onAcceptAll={acceptAll}
+        onRejectOptional={rejectOptional}
+        onClose={onSettingsClose}
+      />
+    </>
+  );
+}
+
+function Footer({ footer, onCookieSettingsOpen }) {
+  return (
+    <footer className="border-t border-graphite-100/10 bg-graphite-950 px-5 py-10 text-graphite-100 lg:px-8">
+      <div className="mx-auto flex max-w-7xl flex-col gap-7">
+        <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+          <Logo />
+          <p className="text-sm text-graphite-100/60">
+            © {new Date().getFullYear()} {footer.companyName}. {footer.rights}
+          </p>
+        </div>
+        <div className="flex flex-col gap-3 border-t border-white/10 pt-5 text-sm text-graphite-100/60 sm:flex-row sm:flex-wrap sm:items-center">
+          <a href="#politika-privatnosti" className="footer-legal-link">{footer.links.privacy}</a>
+          <a href="#politika-kolacica" className="footer-legal-link">{footer.links.cookies}</a>
+          <button type="button" className="footer-legal-link text-left" onClick={onCookieSettingsOpen}>
+            {footer.links.cookieSettings}
+          </button>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
 function App() {
   const {
     about,
@@ -382,9 +682,13 @@ function App() {
     services,
     signals,
     strategicSupport,
+    legal,
+    cookies,
   } = siteContent;
+  const hash = useHashRoute();
+  const [cookieSettingsOpen, setCookieSettingsOpen] = React.useState(false);
 
-  useScrollReveal();
+  useScrollReveal(hash);
 
   const handleContactSubmit = (event) => {
     event.preventDefault();
@@ -408,37 +712,45 @@ function App() {
     window.location.href = `mailto:${contact.email}?subject=${subject}&body=${body}`;
   };
 
+  const isPrivacyPage = hash === '#politika-privatnosti';
+  const isCookiePage = hash === '#politika-kolacica';
+
   return (
     <main className="min-h-screen overflow-x-hidden bg-[#efeee7] text-graphite-950">
       <Header />
-
-      <section id="pocetna" className="relative scroll-mt-24 overflow-hidden bg-graphite-950 pt-28 text-graphite-100 lg:pt-32">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_40%,rgba(198,168,91,0.08),transparent_40%)]" />
-        <div className="absolute inset-0 hero-lines opacity-25" />
-        <div className="relative mx-auto grid max-w-7xl gap-12 px-5 pb-14 sm:gap-14 sm:pb-20 lg:grid-cols-[1fr_0.86fr] lg:px-8 lg:pb-[5.5rem]">
-          <div className="reveal flex flex-col justify-center">
-            <p className="eyebrow text-champagne-400">POSLOVNA ARHITEKTURA</p>
-            <h1 className="mt-7 max-w-3xl font-display text-[2rem] font-semibold leading-[1.08] tracking-tight text-[#f5f5f2] sm:text-[2.58rem] lg:text-[3.48rem]">
-              {hero.title}
-            </h1>
-            <p className="mt-7 max-w-xl text-[15px] leading-relaxed text-[#d9d3c6] sm:text-base">
-              {hero.text}
-            </p>
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <a href="#kontakt" className="premium-button inline-flex min-h-11 items-center justify-center gap-3 bg-champagne-400 px-7 py-3.5 text-center font-semibold text-graphite-950 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-champagne-400">
-                {ctas.primary}
-                <ArrowRight className="shrink-0" size={18} />
-              </a>
-              <a href="#kako-radimo" className="premium-button-secondary inline-flex min-h-11 items-center justify-center gap-3 border border-white/10 px-7 py-3.5 text-center font-semibold text-graphite-100/75 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-champagne-400">
-                {ctas.secondary}
-                <ChevronRight className="shrink-0" size={18} />
-              </a>
+      {isPrivacyPage ? (
+        <PrivacyPolicy content={legal.privacy} />
+      ) : isCookiePage ? (
+        <CookiePolicy content={legal.cookies} />
+      ) : (
+        <>
+          <section id="pocetna" className="relative scroll-mt-24 overflow-hidden bg-graphite-950 pt-28 text-graphite-100 lg:pt-32">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_40%,rgba(198,168,91,0.08),transparent_40%)]" />
+            <div className="absolute inset-0 hero-lines opacity-25" />
+            <div className="relative mx-auto grid max-w-7xl gap-12 px-5 pb-14 sm:gap-14 sm:pb-20 lg:grid-cols-[1fr_0.86fr] lg:px-8 lg:pb-[5.5rem]">
+              <div className="reveal flex flex-col justify-center">
+                <p className="eyebrow text-champagne-400">POSLOVNA ARHITEKTURA</p>
+                <h1 className="mt-7 max-w-3xl font-display text-[2rem] font-semibold leading-[1.08] tracking-tight text-[#f5f5f2] sm:text-[2.58rem] lg:text-[3.48rem]">
+                  {hero.title}
+                </h1>
+                <p className="mt-7 max-w-xl text-[15px] leading-relaxed text-[#d9d3c6] sm:text-base">
+                  {hero.text}
+                </p>
+                <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+                  <a href="#kontakt" className="premium-button inline-flex min-h-11 items-center justify-center gap-3 bg-champagne-400 px-7 py-3.5 text-center font-semibold text-graphite-950 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-champagne-400">
+                    {ctas.primary}
+                    <ArrowRight className="shrink-0" size={18} />
+                  </a>
+                  <a href="#kako-radimo" className="premium-button-secondary inline-flex min-h-11 items-center justify-center gap-3 border border-white/10 px-7 py-3.5 text-center font-semibold text-graphite-100/75 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-champagne-400">
+                    {ctas.secondary}
+                    <ChevronRight className="shrink-0" size={18} />
+                  </a>
+                </div>
+              </div>
+              <HeroGraphic />
             </div>
-          </div>
-          <HeroGraphic />
-        </div>
-      </section>
-      <HeroCards items={heroCards} />
+          </section>
+          <HeroCards items={heroCards} />
 
       <section id="usluge" className="section-pad section-ivory scroll-mt-24">
         <SectionHeading
@@ -591,15 +903,15 @@ function App() {
           </form>
         </div>
       </section>
-
-      <footer className="border-t border-graphite-100/10 bg-graphite-950 px-5 py-10 text-graphite-100 lg:px-8">
-        <div className="mx-auto flex max-w-7xl flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-          <Logo />
-          <p className="text-sm text-graphite-100/60">
-            © {new Date().getFullYear()} {footer.companyName}. {footer.rights}
-          </p>
-        </div>
-      </footer>
+        </>
+      )}
+      <Footer footer={footer} onCookieSettingsOpen={() => setCookieSettingsOpen(true)} />
+      <CookieConsent
+        content={cookies}
+        settingsOpen={cookieSettingsOpen}
+        onSettingsOpen={() => setCookieSettingsOpen(true)}
+        onSettingsClose={() => setCookieSettingsOpen(false)}
+      />
     </main>
   );
 }
