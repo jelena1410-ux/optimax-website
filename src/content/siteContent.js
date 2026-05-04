@@ -295,5 +295,128 @@ export const siteContent = {
   footer: {
     companyName: 'OptiMAX Consulting',
     rights: 'Sva prava pridržana.',
+    links: {
+      privacy: 'Politika privatnosti',
+      cookies: 'Politika kolačića',
+      cookieSettings: 'Postavke kolačića',
+    },
+  },
+
+  legal: {
+    privacy: {
+      eyebrow: 'Privatnost',
+      title: 'Politika privatnosti',
+      updated: 'Zadnje ažuriranje: svibanj 2026.',
+      intro:
+        'Ova politika privatnosti objašnjava kako OptiMAX Consulting obrađuje osobne podatke posjetitelja web stranice i osoba koje pošalju upit putem kontakt forme.',
+      sections: [
+        {
+          title: 'Voditelj obrade',
+          text: 'Voditelj obrade osobnih podataka je OptiMAX Consulting.',
+        },
+        {
+          title: 'Podaci koje prikupljamo',
+          text: 'Putem kontakt forme možemo prikupiti ime, naziv tvrtke, email adresu i sadržaj poruke koju nam pošaljete.',
+        },
+        {
+          title: 'Svrha obrade',
+          text: 'Podatke koristimo radi odgovora na upit, poslovne komunikacije te pripreme ponude ili poslovne dijagnostike.',
+        },
+        {
+          title: 'Pravna osnova',
+          text: 'Pravna osnova obrade je vaša privola kada nam se sami obratite te, prema potrebi, legitimni interes za odgovor na upit i nastavak poslovne komunikacije.',
+        },
+        {
+          title: 'Rok čuvanja',
+          text: 'Podatke čuvamo dok traje komunikacija, odnosno najdulje 24 mjeseca ako ne nastane ugovorni odnos, osim ako dulje čuvanje nije potrebno radi zakonskih obveza.',
+        },
+        {
+          title: 'Primatelji podataka',
+          text: 'Podaci se mogu prenijeti tehničkim pružateljima usluga hostinga i email komunikacije, isključivo u mjeri potrebnoj za rad web stranice i poslovnu komunikaciju.',
+        },
+        {
+          title: 'Vaša prava',
+          text: 'Imate pravo zatražiti pristup podacima, ispravak, brisanje, ograničenje obrade, prigovor na obradu te povlačenje privole kada je obrada utemeljena na privoli.',
+        },
+        {
+          title: 'Kontakt za privatnost',
+          text: 'Za pitanja o privatnosti možete nas kontaktirati na kontakt@optimax-consulting.hr.',
+        },
+        {
+          title: 'Dodatne napomene',
+          text: 'Osobne podatke ne prodajemo trećim stranama. Također imate pravo obratiti se Agenciji za zaštitu osobnih podataka (AZOP).',
+        },
+      ],
+      note: 'Ovaj tekst služi kao poslovno informativna osnova i ne predstavlja pravni savjet.',
+    },
+    cookies: {
+      eyebrow: 'Kolačići',
+      title: 'Politika kolačića',
+      updated: 'Zadnje ažuriranje: svibanj 2026.',
+      intro:
+        'Ova politika objašnjava kako OptiMAX web stranica koristi kolačiće i slične tehnologije radi tehničkog rada stranice i, ako korisnik pristane, za buduću analitiku ili marketing.',
+      sections: [
+        {
+          title: 'Što su kolačići',
+          text: 'Kolačići su male tekstualne datoteke koje web stranica može pohraniti u preglednik radi osnovnog rada, pamćenja postavki ili mjerenja korištenja stranice.',
+        },
+        {
+          title: 'Vrste kolačića',
+          text: 'Nužni kolačići omogućuju tehnički rad stranice. Analitički kolačići pomažu razumjeti korištenje stranice. Marketinški kolačići koriste se za oglašavanje ili mjerenje kampanja.',
+        },
+        {
+          title: 'Privola za ne-nužne kolačiće',
+          text: 'Ne-nužni kolačići, uključujući analitičke i marketinške, aktiviraju se tek nakon vaše privole. Trenutno se koriste samo nužni kolačići, ali je struktura spremna za buduće uključivanje analitike uz privolu.',
+        },
+        {
+          title: 'Promjena odabira',
+          text: 'Privolu možete promijeniti ili povući u bilo kojem trenutku putem poveznice “Postavke kolačića” u podnožju stranice.',
+        },
+      ],
+      table: [
+        {
+          category: 'Nužni kolačići',
+          purpose: 'Omogućuju osnovni rad stranice i spremanje izbora o kolačićima.',
+          status: 'Uvijek uključeno',
+        },
+        {
+          category: 'Analitički kolačići',
+          purpose: 'Mogu se koristiti za mjerenje posjećenosti i razumijevanje korištenja stranice.',
+          status: 'Isključeno dok ne date privolu',
+        },
+        {
+          category: 'Marketinški kolačići',
+          purpose: 'Mogu se koristiti za oglašavanje, remarketing ili mjerenje kampanja.',
+          status: 'Isključeno dok ne date privolu',
+        },
+      ],
+      note: 'Trenutno nisu uključeni analitički ni marketinški alati poput Google Analyticsa ili Meta Pixela.',
+    },
+  },
+
+  cookies: {
+    bannerText: 'Koristimo nužne kolačiće za rad stranice, a analitičke samo uz vašu privolu.',
+    buttons: {
+      acceptAll: 'Prihvati sve',
+      rejectOptional: 'Odbij neobavezne',
+      settings: 'Postavke',
+      save: 'Spremi postavke',
+    },
+    modalTitle: 'Postavke kolačića',
+    modalText: 'Odaberite koje kategorije kolačića dopuštate. Nužni kolačići uvijek su uključeni jer omogućuju osnovni rad stranice.',
+    categories: {
+      necessary: {
+        title: 'Nužni kolačići',
+        text: 'Potrebni su za osnovni rad stranice i spremanje vašeg izbora.',
+      },
+      analytics: {
+        title: 'Analitički kolačići',
+        text: 'Pomažu razumjeti kako se stranica koristi. Aktiviraju se samo uz privolu.',
+      },
+      marketing: {
+        title: 'Marketinški kolačići',
+        text: 'Mogu služiti za oglašavanje i mjerenje kampanja. Aktiviraju se samo uz privolu.',
+      },
+    },
   },
 };
