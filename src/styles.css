@@ -473,6 +473,20 @@ h3 {
   color: rgba(245, 245, 242, 0.9);
 }
 
+footer:not(:has(.barteni-group-footnote))::after {
+  display: block;
+  max-width: 80rem;
+  margin: 1rem auto 0;
+  padding-right: 1.25rem;
+  padding-left: 1.25rem;
+  color: rgba(239, 238, 231, 0.6);
+  font-size: 0.78rem;
+  line-height: 1.8;
+  text-align: left;
+  white-space: pre-line;
+  content: "OptiMAX Consulting je dio Barteni Grupe.\A\A Barteni Group d. o. o.\A OIB: 74935482102\A MB: 04323904\A Osnovano: 2014\A Veličina: mikro poduzetnik\A Status: aktivan";
+}
+
 .cookie-banner {
   position: fixed;
   right: 1rem;
