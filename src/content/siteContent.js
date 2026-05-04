@@ -296,13 +296,14 @@ export const siteContent = {
     companyName: 'OptiMAX Consulting',
     rights: 'Sva prava pridržana.',
     group: {
-      brand: 'OptiMAX Consulting',
-      relation: 'dio Barteni Grupe',
-      company: 'BARTENI GROUP d. o. o.',
+      relation: 'OptiMAX Consulting je dio Barteni Grupe.',
+      company: 'Barteni Group d. o. o.',
       details: [
         'OIB: 74935482102',
         'MB: 04323904',
-        'Godina osnivanja: 2014',
+        'Osnovano: 2014',
+        'Veličina: mikro poduzetnik',
+        'Status: aktivan',
       ],
     },
     links: {
