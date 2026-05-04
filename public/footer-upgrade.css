@@ -1,0 +1,274 @@
+.optimax-trust-section {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(203, 185, 135, 0.1), transparent 32rem),
+    radial-gradient(circle at 88% 92%, rgba(108, 123, 74, 0.18), transparent 34rem),
+    #11110f;
+  color: #f5f5f2;
+  padding: 4.5rem 1.25rem;
+}
+
+.optimax-trust-inner,
+.optimax-corporate-footer {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.optimax-trust-heading {
+  display: grid;
+  gap: 2rem;
+  align-items: end;
+  padding: 2.5rem 0;
+  border-top: 1px solid rgba(203, 185, 135, 0.15);
+  border-bottom: 1px solid rgba(203, 185, 135, 0.15);
+}
+
+.optimax-trust-heading p {
+  margin: 0;
+  color: rgba(203, 185, 135, 0.9);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.optimax-trust-heading h2 {
+  max-width: 38rem;
+  margin: 1rem 0 0;
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: clamp(1.7rem, 4vw, 2.55rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: #f5f5f2;
+}
+
+.optimax-trust-heading span {
+  display: block;
+  max-width: 42rem;
+  color: rgba(245, 245, 242, 0.68);
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
+.optimax-trust-grid {
+  display: grid;
+  gap: 1px;
+  margin-top: 2.5rem;
+  background: rgba(203, 185, 135, 0.15);
+}
+
+.optimax-trust-grid article {
+  background: #11110f;
+  padding: 1.5rem 1.25rem;
+  transition: background 350ms ease, transform 350ms ease;
+}
+
+.optimax-trust-grid article:hover {
+  background: rgba(30, 30, 26, 0.95);
+  transform: translateY(-2px);
+}
+
+.optimax-trust-grid small {
+  color: rgba(203, 185, 135, 0.72);
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+.optimax-trust-grid h3 {
+  margin: 1.25rem 0 0;
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: 1.12rem;
+  line-height: 1.25;
+  color: #f5f5f2;
+}
+
+.optimax-trust-grid p {
+  margin: 1rem 0 0;
+  color: rgba(245, 245, 242, 0.62);
+  font-size: 0.88rem;
+  line-height: 1.75;
+}
+
+footer[data-optimax-footer-upgraded='true'] {
+  border-top: 1px solid rgba(203, 185, 135, 0.2);
+  background:
+    radial-gradient(circle at 10% 0%, rgba(203, 185, 135, 0.08), transparent 28rem),
+    #11110f;
+  color: #f5f5f2;
+  padding: 3rem 1.25rem;
+}
+
+.optimax-footer-grid {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.optimax-footer-brand {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.18rem;
+  color: #f5f5f2;
+  text-decoration: none;
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: 1.42rem;
+  font-weight: 650;
+  letter-spacing: -0.03em;
+}
+
+.optimax-footer-brand span {
+  color: #cbb987;
+}
+
+.optimax-footer-brand small {
+  margin-left: 0.35rem;
+  color: rgba(245, 245, 242, 0.76);
+  font-family: inherit;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.optimax-footer-position {
+  margin: 1.75rem 0 0;
+  color: rgba(203, 185, 135, 0.78);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+}
+
+.optimax-footer-copy {
+  max-width: 24rem;
+  margin: 1.25rem 0 0;
+  color: rgba(245, 245, 242, 0.62);
+  font-size: 0.9rem;
+  line-height: 1.75;
+}
+
+.optimax-footer-grid h2 {
+  margin: 0;
+  color: rgba(245, 245, 242, 0.78);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.optimax-footer-grid nav > div,
+.optimax-footer-grid h2 + div {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.optimax-corporate-footer .footer-legal-link {
+  color: rgba(245, 245, 242, 0.58);
+  text-decoration: none;
+  transition: color 250ms ease;
+}
+
+.optimax-corporate-footer .footer-legal-link:hover {
+  color: rgba(203, 185, 135, 0.95);
+}
+
+.barteni-group-footnote {
+  color: rgba(245, 245, 242, 0.52);
+  font-size: 0.76rem;
+  line-height: 1.75;
+}
+
+.barteni-group-footnote p {
+  max-width: 18rem;
+  margin: 1.25rem 0 0;
+}
+
+.barteni-group-footnote strong,
+.barteni-group-footnote span {
+  display: block;
+}
+
+.barteni-group-footnote strong {
+  margin-top: 1.25rem;
+  color: rgba(245, 245, 242, 0.68);
+  font-weight: 600;
+}
+
+.optimax-footer-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(203, 185, 135, 0.15);
+  color: rgba(245, 245, 242, 0.5);
+  font-size: 0.76rem;
+  line-height: 1.7;
+}
+
+.optimax-footer-bottom p {
+  margin: 0;
+}
+
+.optimax-footer-bottom > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.optimax-footer-bottom button {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+@media (min-width: 640px) {
+  .optimax-trust-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .optimax-footer-bottom {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .optimax-footer-bottom > div {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .optimax-trust-section {
+    padding: 6rem 2rem;
+  }
+
+  .optimax-trust-heading {
+    grid-template-columns: 0.78fr 1.22fr;
+  }
+
+  .optimax-trust-heading span {
+    justify-self: end;
+  }
+
+  .optimax-trust-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  footer[data-optimax-footer-upgraded='true'] {
+    padding: 3rem 2rem;
+  }
+
+  .optimax-footer-grid {
+    grid-template-columns: 1.35fr 0.78fr 0.88fr 1.05fr;
+    gap: 3.5rem;
+  }
+}
