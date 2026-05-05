@@ -6,7 +6,6 @@ import {
   CheckCircle2,
   ChevronRight,
   ClipboardCheck,
-  Compass,
   Layers3,
   Mail,
   MapPin,
@@ -249,49 +248,20 @@ function SectionHeading({ eyebrow, title, text }) {
 }
 
 function HeroGraphic() {
-  const { visual } = siteContent.hero;
-  const visualCards = [visual.before, visual.after];
-
   return (
-    <div className="strategic-system hero-ambience reveal relative overflow-hidden bg-graphite-950/58 p-5 shadow-[0_30px_92px_rgba(0,0,0,0.28)] backdrop-blur-sm sm:p-6 lg:p-7">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_76%_16%,rgba(198,168,91,0.14),transparent_30%),radial-gradient(circle_at_8%_88%,rgba(108,123,74,0.16),transparent_30%),linear-gradient(135deg,rgba(239,238,231,0.045),transparent_42%)]" />
-      <div className="absolute inset-0 executive-grid opacity-70" />
-      <div className="absolute left-8 top-0 h-full w-px bg-gradient-to-b from-transparent via-champagne-400/40 to-transparent" />
-      <div className="absolute right-0 top-9 h-px w-24 bg-gradient-to-l from-champagne-400/40 to-transparent" />
-      <div className="absolute bottom-10 left-0 h-px w-32 bg-gradient-to-r from-olive-600/40 to-transparent" />
+    <div className="strategy-room reveal relative min-h-[330px] overflow-hidden sm:min-h-[390px] lg:min-h-[430px]">
+      <div className="strategy-room__ambient" />
+      <div className="strategy-room__architecture" />
+      <div className="strategy-room__table" />
+      <div className="strategy-room__reflection" />
 
-      <div className="relative grid min-h-[300px] gap-5 sm:min-h-[350px] lg:min-h-[380px] lg:content-center">
-        <div className="inline-flex w-fit items-center gap-2 border-b border-champagne-400/40 pb-2 text-[0.57rem] font-semibold uppercase tracking-[0.18em] text-champagne-300/80">
-          <Compass size={12} />
-          {visual.badge}
-        </div>
-        <div className="grid gap-5 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
-          {visualCards.map((card, index) => (
-            <article
-              key={card.title}
-              className={`system-panel group relative overflow-hidden border-l bg-graphite-950/24 py-1.5 pl-5 pr-2 transition duration-500 ease-out hover:translate-x-1 sm:pl-6 ${
-                index === 1
-                  ? 'border-champagne-400/40 lg:mt-12'
-                  : 'border-white/15'
-              }`}
-            >
-              <span className="font-display text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-champagne-400/75">
-                {String(index + 1).padStart(2, '0')}
-              </span>
-              <h3 className="mt-3 max-w-[15rem] font-display text-[1.16rem] font-semibold leading-tight tracking-tight text-[#f5f5f2] transition duration-300 group-hover:text-champagne-100 sm:text-[1.26rem]">
-                {card.title}
-              </h3>
-              <ul className="mt-5 grid gap-3 text-[0.8rem] leading-relaxed text-graphite-100/70 sm:text-[0.86rem]">
-                {card.items.map((item) => (
-                  <li key={item} className="flex gap-3 border-t border-white/10 pt-2.5 first:border-t-0 first:pt-0">
-                    <span className="mt-2 h-px w-4 shrink-0 bg-champagne-400/50 transition duration-300 group-hover:w-6" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </article>
-          ))}
-        </div>
+      <div className="strategy-room__statement">
+        <span aria-hidden="true" />
+        <p>
+          Sustav mora voditi posao.
+          <br />
+          Ne ljudi koji gase požare.
+        </p>
       </div>
     </div>
   );
@@ -344,8 +314,9 @@ function AboutSection({ content }) {
           </h2>
         </div>
 
-        <div className="reveal mt-10 border-y border-champagne-400/15 py-8 sm:mt-12 sm:py-10">
-          <div className="max-w-4xl space-y-5 text-[15px] leading-relaxed text-graphite-100/70 sm:text-base">
+        <div className="reveal mt-10 border-y border-champagne-400/15 py-7 sm:mt-12 sm:py-9">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-champagne-400/75">OptiMAX Consulting</p>
+          <div className="mt-5 max-w-4xl columns-1 gap-10 space-y-5 text-[15px] leading-relaxed text-graphite-100/70 sm:text-base lg:columns-2">
             {content.companyParagraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
@@ -362,7 +333,7 @@ function AboutSection({ content }) {
                 {content.founder.name}
               </h3>
             </div>
-            <div className="mt-8 space-y-5 text-[15px] leading-relaxed text-graphite-100/70 sm:text-base">
+            <div className="founder-editorial-copy mt-8 text-[15px] leading-relaxed text-graphite-100/70 sm:text-base">
               {content.founder.paragraphs.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
@@ -370,9 +341,9 @@ function AboutSection({ content }) {
           </div>
 
           <div className="reveal order-1 lg:order-2">
-            <figure className="relative overflow-hidden rounded-[1.25rem] border border-champagne-400/25 bg-[linear-gradient(145deg,rgba(245,245,242,0.08),rgba(108,123,74,0.08))] p-2 shadow-[0_28px_90px_rgba(0,0,0,0.34)]">
+            <figure className="founder-frame relative overflow-hidden rounded-[1.25rem] border border-champagne-400/25 bg-[linear-gradient(145deg,rgba(245,245,242,0.08),rgba(108,123,74,0.08))] p-2 shadow-[0_28px_90px_rgba(0,0,0,0.34)]">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_12%,rgba(203,185,135,0.16),transparent_34%),linear-gradient(180deg,transparent,rgba(0,0,0,0.18))]" />
-              <div className="relative aspect-[4/5] overflow-hidden rounded-[1rem] bg-graphite-900">
+              <div className="founder-image-wrap relative aspect-[4/5] overflow-hidden rounded-[1rem] bg-graphite-900">
                 <img
                   src={content.founder.photo.src}
                   alt={content.founder.photo.alt}
@@ -405,11 +376,14 @@ function AboutSection({ content }) {
               <p className="mt-3 text-sm leading-7 text-graphite-100/60">{content.principles.text}</p>
               <div className="mt-5 divide-y divide-white/10 border-y border-white/10">
                 {content.principles.items.map((item, index) => (
-                  <div key={item} className="grid grid-cols-[2.4rem_1fr] gap-4 py-3.5">
+                  <div key={item.title} className="grid grid-cols-[2.4rem_1fr] gap-4 py-3.5">
                     <span className="font-display text-[0.64rem] font-semibold tracking-[0.18em] text-champagne-400/70">
                       {String(index + 1).padStart(2, '0')}
                     </span>
-                    <span className="text-sm font-medium leading-6 text-[#f5f5f2]/82">{item}</span>
+                    <span>
+                      <span className="block text-sm font-medium leading-6 text-[#f5f5f2]/86">{item.title}</span>
+                      <span className="mt-1 block text-[0.78rem] leading-6 text-graphite-100/50">{item.text}</span>
+                    </span>
                   </div>
                 ))}
               </div>

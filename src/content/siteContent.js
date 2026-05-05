@@ -188,10 +188,22 @@ export const siteContent = {
       title: 'Način razmišljanja',
       text: 'OptiMAX pristup poslovanje promatra kroz jasnoću, odgovornost i provedbu.',
       items: [
-        'Sustav prije improvizacije',
-        'Jasnoća prije kompleksnosti',
-        'Podaci prije pretpostavki',
-        'Provedba prije strategije',
+        {
+          title: 'Sustav prije improvizacije',
+          text: 'Rast treba okvir rada koji ne ovisi o stalnom snalaženju.',
+        },
+        {
+          title: 'Jasnoća prije kompleksnosti',
+          text: 'Dobar sustav pojednostavljuje odluke, odgovornosti i ritam rada.',
+        },
+        {
+          title: 'Podaci prije pretpostavki',
+          text: 'Upravljanje traži pokazatelje koji stvarno pomažu odlučivanju.',
+        },
+        {
+          title: 'Provedba prije strategije',
+          text: 'Vrijednost nastaje tek kada se promjena vidi u svakodnevnom radu.',
+        },
       ],
     },
   },
