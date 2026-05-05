@@ -176,6 +176,19 @@ function CookiePolicy({ content }) {
   );
 }
 
+function FooterLogo() {
+  return (
+    <a href="#pocetna" className="footer-wordmark group inline-flex flex-col items-start" aria-label={siteContent.logo.ariaLabel}>
+      <span className="font-display text-[1.5rem] font-semibold leading-none tracking-tight text-[#f5f5f2]">
+        Opti<span>MAX</span>
+      </span>
+      <span className="mt-1 text-[0.58rem] font-semibold uppercase leading-none tracking-[0.28em] text-graphite-100/72 transition duration-300 group-hover:text-graphite-100/88">
+        Consulting
+      </span>
+    </a>
+  );
+}
+
 function Header() {
   const [open, setOpen] = React.useState(false);
 
@@ -372,21 +385,14 @@ function AboutSection({ content }) {
               </figcaption>
             </figure>
             <div className="about-manifest mt-6">
-              <p className="eyebrow text-champagne-400">{content.principles.title}</p>
-              <p className="mt-3 text-sm leading-7 text-graphite-100/60">{content.principles.text}</p>
-              <div className="mt-5 divide-y divide-white/10 border-y border-white/10">
-                {content.principles.items.map((item, index) => (
-                  <div key={item.title} className="grid grid-cols-[2.4rem_1fr] gap-4 py-3.5">
-                    <span className="font-display text-[0.64rem] font-semibold tracking-[0.18em] text-champagne-400/70">
-                      {String(index + 1).padStart(2, '0')}
-                    </span>
-                    <span>
-                      <span className="block text-sm font-medium leading-6 text-[#f5f5f2]/86">{item.title}</span>
-                      <span className="mt-1 block text-[0.78rem] leading-6 text-graphite-100/50">{item.text}</span>
-                    </span>
-                  </div>
-                ))}
-              </div>
+              <p className="about-statement-label">OPTIMAX PRINCIPLE</p>
+              <blockquote className="about-statement-quote">
+                Najveća vrijednost sustava
+                <br />
+                nije kontrola.
+                <br />
+                Nego jasnoća.
+              </blockquote>
             </div>
           </div>
         </div>
@@ -725,7 +731,7 @@ function Footer({ footer, onCookieSettingsOpen }) {
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-10 lg:grid-cols-[1.35fr_0.78fr_0.88fr_1.05fr] lg:gap-14">
           <div>
-            <Logo />
+            <FooterLogo />
             <p className="mt-7 text-xs font-semibold uppercase tracking-[0.22em] text-champagne-400/78">{footer.positioning}</p>
             <p className="mt-5 max-w-sm text-sm leading-7 text-graphite-100/62">
               {footer.text}

@@ -578,10 +578,51 @@ h3 {
   border-right: 1px solid rgba(245, 245, 242, 0.06);
   border-bottom: 1px solid rgba(245, 245, 242, 0.06);
   background:
-    radial-gradient(circle at 92% 0%, rgba(203, 185, 135, 0.09), transparent 14rem),
+    radial-gradient(circle at 84% 8%, rgba(203, 185, 135, 0.12), transparent 12rem),
+    linear-gradient(145deg, rgba(245, 245, 242, 0.035), transparent 42%),
     rgba(21, 21, 18, 0.42);
-  padding: 1.25rem 1.35rem;
-  box-shadow: 0 18px 54px rgba(0, 0, 0, 0.2);
+  padding: clamp(1.45rem, 4vw, 2.2rem);
+  box-shadow: 0 20px 62px rgba(0, 0, 0, 0.24);
+}
+
+.about-statement-label {
+  color: rgba(203, 185, 135, 0.78);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+}
+
+.about-statement-quote {
+  position: relative;
+  margin-top: 1.25rem;
+  padding-left: 1.15rem;
+  color: #f5f5f2;
+  font-family: Manrope, Inter, sans-serif;
+  font-size: clamp(1.35rem, 3.2vw, 2rem);
+  font-weight: 650;
+  line-height: 1.18;
+  letter-spacing: -0.035em;
+}
+
+.about-statement-quote::before {
+  position: absolute;
+  top: 0.1rem;
+  bottom: 0.15rem;
+  left: 0;
+  width: 1px;
+  content: '';
+  background: linear-gradient(180deg, transparent, rgba(203, 185, 135, 0.84), transparent);
+  box-shadow: 0 0 22px rgba(203, 185, 135, 0.18);
+}
+
+.footer-wordmark {
+  border-left: 1px solid rgba(203, 185, 135, 0.42);
+  padding-left: 0.75rem;
+  text-decoration: none;
+}
+
+.footer-wordmark span span {
+  color: #cbb987;
 }
 
 .contact-closing {
