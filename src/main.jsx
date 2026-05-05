@@ -78,7 +78,7 @@ function useHashRoute() {
 
 function Logo() {
   return (
-    <a href="#pocetna" className="group mr-8 flex h-11 w-[9.2rem] shrink-0 items-center sm:w-[10rem] lg:mr-16 xl:mr-20" aria-label={siteContent.logo.ariaLabel}>
+    <a href="#pocetna" className="group mr-10 flex h-11 w-[9.4rem] shrink-0 items-center sm:w-[10.2rem] lg:mr-20 xl:mr-24" aria-label={siteContent.logo.ariaLabel}>
       <span className="relative flex min-w-0 flex-col items-start justify-center border-l border-champagne-400/40 pl-3 leading-none">
         <span className="font-display text-[1.32rem] font-semibold tracking-tight text-[#f5f5f2] transition duration-300 group-hover:text-white sm:text-[1.46rem]">
           Opti<span className="text-champagne-400">MAX</span>
@@ -253,13 +253,14 @@ function HeroGraphic() {
   const visualCards = [visual.before, visual.after];
 
   return (
-    <div className="strategic-system reveal relative overflow-hidden bg-graphite-950/60 p-5 shadow-[0_30px_92px_rgba(0,0,0,0.28)] sm:p-6 lg:p-7">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_76%_16%,rgba(198,168,91,0.12),transparent_30%),radial-gradient(circle_at_8%_88%,rgba(108,123,74,0.16),transparent_30%),linear-gradient(135deg,rgba(239,238,231,0.035),transparent_42%)]" />
+    <div className="strategic-system hero-ambience reveal relative overflow-hidden bg-graphite-950/58 p-5 shadow-[0_30px_92px_rgba(0,0,0,0.28)] backdrop-blur-sm sm:p-6 lg:p-7">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_76%_16%,rgba(198,168,91,0.14),transparent_30%),radial-gradient(circle_at_8%_88%,rgba(108,123,74,0.16),transparent_30%),linear-gradient(135deg,rgba(239,238,231,0.045),transparent_42%)]" />
+      <div className="absolute inset-0 executive-grid opacity-70" />
       <div className="absolute left-8 top-0 h-full w-px bg-gradient-to-b from-transparent via-champagne-400/40 to-transparent" />
       <div className="absolute right-0 top-9 h-px w-24 bg-gradient-to-l from-champagne-400/40 to-transparent" />
       <div className="absolute bottom-10 left-0 h-px w-32 bg-gradient-to-r from-olive-600/40 to-transparent" />
 
-      <div className="relative grid min-h-[320px] gap-5 sm:min-h-[370px] lg:min-h-[405px] lg:content-center">
+      <div className="relative grid min-h-[300px] gap-5 sm:min-h-[350px] lg:min-h-[380px] lg:content-center">
         <div className="inline-flex w-fit items-center gap-2 border-b border-champagne-400/40 pb-2 text-[0.57rem] font-semibold uppercase tracking-[0.18em] text-champagne-300/80">
           <Compass size={12} />
           {visual.badge}
@@ -268,7 +269,7 @@ function HeroGraphic() {
           {visualCards.map((card, index) => (
             <article
               key={card.title}
-              className={`system-panel group relative overflow-hidden border-l py-1.5 pl-5 pr-2 transition duration-500 ease-out hover:translate-x-1 sm:pl-6 ${
+              className={`system-panel group relative overflow-hidden border-l bg-graphite-950/24 py-1.5 pl-5 pr-2 transition duration-500 ease-out hover:translate-x-1 sm:pl-6 ${
                 index === 1
                   ? 'border-champagne-400/40 lg:mt-12'
                   : 'border-white/15'
@@ -331,78 +332,125 @@ function PrincipleSection({ content }) {
   );
 }
 
-function AboutSection({ content, cta }) {
-  const principles = [
-    {
-      title: 'Sustav prije improvizacije',
-      description: 'Okvir rada mora biti jasan prije nego što rast postane opterećenje.',
-    },
-    {
-      title: 'Jasnoća prije kompleksnosti',
-      description: 'Dobar sustav pojednostavljuje odluke, odgovornosti i svakodnevni ritam.',
-    },
-    {
-      title: 'Podaci prije pretpostavki',
-      description: 'Upravljanje traži informacije koje stvarno pomažu odlučivanju.',
-    },
-    {
-      title: 'Provedba prije strategije',
-      description: 'Vrijednost nastaje tek kada se promjena vidi u načinu rada.',
-    },
-  ];
-
+function AboutSection({ content }) {
   return (
     <section id="o-nama" className="relative scroll-mt-24 overflow-hidden bg-graphite-950 py-20 text-graphite-100 sm:py-24 lg:py-28">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(203,185,135,0.06),transparent_28%),linear-gradient(180deg,rgba(21,21,18,0),rgba(48,55,32,0.16))]" />
-      <div className="relative mx-auto grid max-w-7xl gap-14 px-5 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:px-8">
-        <div className="reveal max-w-xl">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(203,185,135,0.08),transparent_30%),radial-gradient(circle_at_82%_34%,rgba(108,123,74,0.14),transparent_34%),linear-gradient(180deg,rgba(21,21,18,0),rgba(48,55,32,0.14))]" />
+      <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
+        <div className="reveal max-w-3xl">
           <p className="eyebrow text-champagne-400">{content.eyebrow}</p>
           <h2 className="mt-5 font-display text-[1.68rem] font-semibold leading-tight tracking-tight text-[#f5f5f2] sm:text-[2.15rem] lg:text-[2.65rem]">
             {content.title}
           </h2>
-          <div className="mt-7 space-y-5 text-[15px] leading-relaxed text-graphite-100/70 sm:text-base">
-            {content.paragraphs.map((paragraph) => (
+        </div>
+
+        <div className="reveal mt-10 border-y border-champagne-400/15 py-8 sm:mt-12 sm:py-10">
+          <div className="max-w-4xl space-y-5 text-[15px] leading-relaxed text-graphite-100/70 sm:text-base">
+            {content.companyParagraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
-          <a href="#kontakt" className="premium-button mt-8 inline-flex min-h-11 items-center justify-center gap-3 bg-champagne-400 px-7 py-3.5 text-center font-semibold text-graphite-950 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-champagne-400">
-            {cta}
-            <ArrowRight className="shrink-0" size={18} />
-          </a>
         </div>
-        <div className="reveal border-l border-champagne-400/40 pl-6 sm:pl-8 lg:pl-10">
-          <div className="pb-7">
-            <h3 className="font-display text-[1.05rem] font-semibold uppercase leading-tight tracking-[0.14em] text-champagne-300 sm:text-[1.16rem]">
-              Način razmišljanja
-            </h3>
-            <p className="mt-4 max-w-lg text-[0.92rem] leading-relaxed text-graphite-100/70">
-              Sustav promatramo kroz odluke, odgovornosti, podatke i provedbu.
-            </p>
+
+        <div className="mt-12 grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(22rem,0.72fr)] lg:items-start lg:gap-14">
+          <div className="reveal order-2 lg:order-1">
+            <div className="border-l border-champagne-400/45 pl-6 sm:pl-8">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-champagne-400/80">
+                {content.founder.role}
+              </p>
+              <h3 className="mt-4 font-display text-[1.6rem] font-semibold leading-tight tracking-tight text-[#f5f5f2] sm:text-[2rem]">
+                {content.founder.name}
+              </h3>
+            </div>
+            <div className="mt-8 space-y-5 text-[15px] leading-relaxed text-graphite-100/70 sm:text-base">
+              {content.founder.paragraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
           </div>
-          <div className="divide-y divide-white/10 border-y border-white/10">
-            {principles.map((item, index) => (
-              <div key={item.title} className="group grid grid-cols-[2.6rem_1fr] gap-4 py-5 transition duration-500 ease-out hover:translate-x-1">
-                <span className="pt-1 font-display text-[0.66rem] font-semibold tracking-[0.16em] text-champagne-400/70">
-                  {String(index + 1).padStart(2, '0')}
-                </span>
-                <div>
-                  <h4 className="font-display text-base font-semibold leading-6 tracking-tight text-[#f5f5f2] transition duration-300 group-hover:text-champagne-100 sm:text-[1.05rem]">
-                    {item.title}
-                  </h4>
-                  <p className="mt-2 max-w-lg text-sm leading-relaxed text-graphite-100/60">
-                    {item.description}
-                  </p>
+
+          <div className="reveal order-1 lg:order-2">
+            <figure className="relative overflow-hidden rounded-[1.25rem] border border-champagne-400/25 bg-[linear-gradient(145deg,rgba(245,245,242,0.08),rgba(108,123,74,0.08))] p-2 shadow-[0_28px_90px_rgba(0,0,0,0.34)]">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_12%,rgba(203,185,135,0.16),transparent_34%),linear-gradient(180deg,transparent,rgba(0,0,0,0.18))]" />
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[1rem] bg-graphite-900">
+                <img
+                  src={content.founder.photo.src}
+                  alt={content.founder.photo.alt}
+                  className="founder-photo h-full w-full object-cover object-[62%_50%]"
+                  onError={(event) => {
+                    event.currentTarget.style.display = 'none';
+                    event.currentTarget.nextElementSibling?.classList.remove('hidden');
+                    event.currentTarget.nextElementSibling?.classList.add('grid');
+                  }}
+                />
+                <div className="hidden h-full place-items-center px-8 text-center">
+                  <div>
+                    <span className="mx-auto block h-px w-16 bg-champagne-400/50" />
+                    <p className="mt-6 font-display text-xl font-semibold text-[#f5f5f2]">{content.founder.name}</p>
+                    <p className="mt-3 text-xs font-semibold uppercase tracking-[0.2em] text-champagne-300/80">{content.founder.role}</p>
+                    <p className="mt-6 text-sm leading-7 text-graphite-100/58">
+                      Dodajte fotografiju kao <span className="text-champagne-200">{content.founder.photo.src}</span>.
+                    </p>
+                  </div>
                 </div>
               </div>
-            ))}
+              <span className="absolute bottom-5 left-5 h-px w-20 bg-champagne-400/50" />
+              <span className="absolute right-5 top-5 h-20 w-px bg-olive-600/50" />
+              <figcaption className="sr-only">
+                {content.founder.photo.alt}
+              </figcaption>
+            </figure>
+            <div className="about-manifest mt-6">
+              <p className="eyebrow text-champagne-400">{content.principles.title}</p>
+              <p className="mt-3 text-sm leading-7 text-graphite-100/60">{content.principles.text}</p>
+              <div className="mt-5 divide-y divide-white/10 border-y border-white/10">
+                {content.principles.items.map((item, index) => (
+                  <div key={item} className="grid grid-cols-[2.4rem_1fr] gap-4 py-3.5">
+                    <span className="font-display text-[0.64rem] font-semibold tracking-[0.18em] text-champagne-400/70">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                    <span className="text-sm font-medium leading-6 text-[#f5f5f2]/82">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-          <p className="mt-7 border-l border-champagne-400/50 bg-graphite-950/50 p-5 font-display text-base leading-7 text-[#f5f5f2] shadow-[0_16px_44px_rgba(0,0,0,0.18)] sm:text-lg">
-            {content.closing.map((line) => (
-              <span key={line} className="block">
-                {line}
-              </span>
-            ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function EvidenceSection({ content }) {
+  return (
+    <section className="evidence-section relative overflow-hidden scroll-mt-24 px-5 py-16 text-graphite-100 sm:py-20 lg:px-8 lg:py-24">
+      <div className="absolute inset-0 evidence-grid" />
+      <div className="relative mx-auto max-w-7xl">
+        <div className="reveal grid gap-8 border-y border-champagne-400/15 py-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+          <div>
+            <p className="eyebrow text-champagne-400">{content.eyebrow}</p>
+            <h2 className="mt-4 max-w-xl font-display text-[1.55rem] font-semibold leading-tight tracking-tight text-[#f5f5f2] sm:text-[2rem] lg:text-[2.35rem]">
+              {content.title}
+            </h2>
+          </div>
+          <p className="max-w-2xl text-[15px] leading-relaxed text-graphite-100/68 lg:justify-self-end">
+            {content.text}
           </p>
+        </div>
+
+        <div className="mt-10 grid gap-4 lg:grid-cols-5">
+          {content.items.map((item, index) => (
+            <article key={item.title} className={`evidence-card reveal ${index === 0 ? 'lg:col-span-2' : ''}`}>
+              <span className="evidence-index">{String(index + 1).padStart(2, '0')}</span>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+              <div className="evidence-mini" aria-hidden="true">
+                <span />
+                <span />
+                <span />
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>
@@ -644,22 +692,113 @@ function CookieConsent({ content, settingsOpen, onSettingsOpen, onSettingsClose 
   );
 }
 
-function Footer({ footer, onCookieSettingsOpen }) {
+function TrustSignalSection() {
+  const trustSignals = [
+    {
+      title: 'Poslovna arhitektura',
+      text: 'Jasna struktura procesa, odgovornosti i upravljačkog ritma.',
+    },
+    {
+      title: 'Operativna dijagnostika',
+      text: 'Prepoznavanje uskih grla, preklapanja i točaka gdje sustav gubi jasnoću.',
+    },
+    {
+      title: 'Mjerljivi pokazatelji',
+      text: 'KPI-jevi, pregledi i ritam praćenja koji pomažu donositi sigurnije odluke.',
+    },
+    {
+      title: 'Provedba u praksi',
+      text: 'Fokus na promjeni koja se stvarno koristi, a ne na dokumentima koji ostaju u ladici.',
+    },
+  ];
+
   return (
-    <footer className="border-t border-graphite-100/10 bg-graphite-950 px-5 py-10 text-graphite-100 lg:px-8">
-      <div className="mx-auto flex max-w-7xl flex-col gap-7">
-        <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-          <Logo />
-          <p className="text-sm text-graphite-100/60">
-            © {new Date().getFullYear()} {footer.companyName}. {footer.rights}
+    <section className="relative overflow-hidden bg-graphite-950 px-5 py-[4.5rem] text-graphite-100 sm:py-20 lg:px-8 lg:py-24">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_0%,rgba(203,185,135,0.1),transparent_32%),radial-gradient(circle_at_88%_92%,rgba(108,123,74,0.18),transparent_34%)]" />
+      <div className="relative mx-auto max-w-7xl">
+        <div className="reveal grid gap-8 border-y border-champagne-400/15 py-10 lg:grid-cols-[0.78fr_1.22fr] lg:items-end">
+          <div>
+            <p className="eyebrow text-champagne-400">Struktura i povjerenje</p>
+            <h2 className="mt-4 max-w-xl font-display text-[1.7rem] font-semibold leading-tight tracking-tight text-[#f5f5f2] sm:text-[2.15rem] lg:text-[2.55rem]">
+              Za poslovanje koje traži jasniji sustav.
+            </h2>
+          </div>
+          <p className="max-w-2xl text-[15px] leading-relaxed text-graphite-100/68 sm:text-base lg:justify-self-end">
+            OptiMAX Consulting pomaže uvesti strukturu tamo gdje svakodnevni rad, odgovornosti i odluke više ne mogu ovisiti o improvizaciji.
           </p>
         </div>
-        <div className="flex flex-col gap-3 border-t border-white/10 pt-5 text-sm text-graphite-100/60 sm:flex-row sm:flex-wrap sm:items-center">
-          <a href="#politika-privatnosti" className="footer-legal-link">{footer.links.privacy}</a>
-          <a href="#politika-kolacica" className="footer-legal-link">{footer.links.cookies}</a>
-          <button type="button" className="footer-legal-link text-left" onClick={onCookieSettingsOpen}>
-            {footer.links.cookieSettings}
-          </button>
+        <div className="mt-10 grid gap-px bg-champagne-400/15 sm:grid-cols-2 lg:grid-cols-4">
+          {trustSignals.map((item, index) => (
+            <article key={item.title} className="reveal group bg-graphite-950 px-5 py-6 transition duration-500 hover:bg-graphite-900/70 sm:px-6 sm:py-7">
+              <span className="font-display text-[0.68rem] font-semibold tracking-[0.2em] text-champagne-400/70">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+              <h3 className="mt-5 font-display text-lg font-semibold leading-6 text-[#f5f5f2] transition group-hover:text-champagne-100">
+                {item.title}
+              </h3>
+              <p className="mt-4 text-sm leading-7 text-graphite-100/62">{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Footer({ footer, onCookieSettingsOpen }) {
+  return (
+    <footer className="border-t border-champagne-400/20 bg-[radial-gradient(circle_at_10%_0%,rgba(203,185,135,0.08),transparent_28rem),#11110f] px-5 py-12 text-graphite-100 lg:px-8">
+      <div className="mx-auto max-w-7xl">
+        <div className="grid gap-10 lg:grid-cols-[1.35fr_0.78fr_0.88fr_1.05fr] lg:gap-14">
+          <div>
+            <Logo />
+            <p className="mt-7 text-xs font-semibold uppercase tracking-[0.22em] text-champagne-400/78">{footer.positioning}</p>
+            <p className="mt-5 max-w-sm text-sm leading-7 text-graphite-100/62">
+              {footer.text}
+            </p>
+          </div>
+
+          <nav aria-label="Navigacija u podnožju">
+            <h2 className="text-xs font-semibold uppercase tracking-[0.18em] text-graphite-100/78">Navigacija</h2>
+            <div className="mt-5 grid gap-3 text-sm text-graphite-100/58">
+              {siteContent.navigation.map(({ label, href }) => (
+                <a key={href} href={href} className="footer-legal-link">
+                  {label}
+                </a>
+              ))}
+            </div>
+          </nav>
+
+          <div>
+            <h2 className="text-xs font-semibold uppercase tracking-[0.18em] text-graphite-100/78">Kontakt</h2>
+            <div className="mt-5 grid gap-3 text-sm leading-6 text-graphite-100/58">
+              <a href={`mailto:${siteContent.contact.email}`} className="footer-legal-link">{siteContent.contact.email}</a>
+              <a href={siteContent.contact.phoneHref} className="footer-legal-link">{siteContent.contact.phone}</a>
+              <p>{siteContent.contact.location}</p>
+            </div>
+          </div>
+
+          <div className="barteni-group-footnote text-xs leading-relaxed text-graphite-100/52">
+            <h2 className="text-xs font-semibold uppercase tracking-[0.18em] text-graphite-100/72">Barteni Group</h2>
+            <p className="mt-5 max-w-xs text-graphite-100/52">{footer.group.relation}</p>
+            <div className="mt-5 space-y-1.5">
+              <p className="font-medium text-graphite-100/68">{footer.group.company}</p>
+              {footer.group.details.map((item) => (
+                <p key={item}>{item}</p>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-10 flex flex-col gap-4 border-t border-champagne-400/15 pt-6 text-xs leading-relaxed text-graphite-100/50 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
+          <p>© 2026 {footer.companyName}. {footer.rights}</p>
+          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-5">
+            <a href="#politika-privatnosti" className="footer-legal-link">{footer.links.privacy}</a>
+            <a href="#politika-kolacica" className="footer-legal-link">{footer.links.cookies}</a>
+            <button type="button" className="footer-legal-link text-left" onClick={onCookieSettingsOpen}>
+              {footer.links.cookieSettings}
+            </button>
+          </div>
         </div>
       </div>
     </footer>
@@ -672,6 +811,7 @@ function App() {
     audiences,
     contact,
     ctas,
+    evidence,
     expertise,
     footer,
     hero,
@@ -724,13 +864,13 @@ function App() {
         <CookiePolicy content={legal.cookies} />
       ) : (
         <>
-          <section id="pocetna" className="relative scroll-mt-24 overflow-hidden bg-graphite-950 pt-28 text-graphite-100 lg:pt-32">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_40%,rgba(198,168,91,0.08),transparent_40%)]" />
-            <div className="absolute inset-0 hero-lines opacity-25" />
-            <div className="relative mx-auto grid max-w-7xl gap-12 px-5 pb-14 sm:gap-14 sm:pb-20 lg:grid-cols-[1fr_0.86fr] lg:px-8 lg:pb-[5.5rem]">
+          <section id="pocetna" className="hero-stage relative scroll-mt-24 overflow-hidden bg-graphite-950 pt-[6.5rem] text-graphite-100 lg:pt-[7.5rem]">
+            <div className="absolute inset-0 hero-cinematic" />
+            <div className="absolute inset-0 hero-lines opacity-15" />
+            <div className="relative mx-auto grid max-w-7xl gap-10 px-5 pb-14 sm:gap-12 sm:pb-[4.5rem] lg:grid-cols-[1fr_0.84fr] lg:px-8 lg:pb-20">
               <div className="reveal flex flex-col justify-center">
                 <p className="eyebrow text-champagne-400">POSLOVNA ARHITEKTURA</p>
-                <h1 className="mt-7 max-w-3xl font-display text-[2rem] font-semibold leading-[1.08] tracking-tight text-[#f5f5f2] sm:text-[2.58rem] lg:text-[3.48rem]">
+                <h1 className="mt-7 max-w-3xl font-display text-[1.9rem] font-semibold leading-[1.09] tracking-tight text-[#f5f5f2] sm:text-[2.38rem] lg:text-[3.1rem]">
                   {hero.title}
                 </h1>
                 <p className="mt-7 max-w-xl text-[15px] leading-relaxed text-[#d9d3c6] sm:text-base">
@@ -777,8 +917,9 @@ function App() {
 
       <PrincipleSection content={principles} />
 
-      <section id="kako-radimo" className="relative scroll-mt-24 bg-graphite-950 py-16 text-graphite-100 sm:py-20 lg:py-24">
-        <div className="mx-auto grid max-w-7xl gap-10 px-5 lg:grid-cols-[0.86fr_1fr] lg:px-8">
+      <section id="kako-radimo" className="process-section relative scroll-mt-24 overflow-hidden bg-graphite-950 py-16 text-graphite-100 sm:py-20 lg:py-24">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_20%,rgba(203,185,135,0.08),transparent_28rem),radial-gradient(circle_at_12%_80%,rgba(108,123,74,0.14),transparent_30rem)]" />
+        <div className="relative mx-auto grid max-w-7xl gap-10 px-5 lg:grid-cols-[0.86fr_1fr] lg:px-8">
           <div>
             <p className="eyebrow text-champagne-400">{process.eyebrow}</p>
             <h2 className="mt-4 font-display text-[1.55rem] font-semibold leading-tight tracking-tight sm:text-[2rem] lg:text-[2.45rem]">
@@ -788,7 +929,7 @@ function App() {
               {process.text}
             </p>
           </div>
-          <div className="grid gap-6">
+          <div className="process-timeline grid gap-6">
             {process.items.map((item, index) => (
               <div key={item.title} className="process-row reveal">
                 <span className="process-index">{String(index + 1).padStart(2, '0')}</span>
@@ -807,6 +948,8 @@ function App() {
       <ExpertiseSection content={expertise} />
 
       <SignalSection signals={signals} results={results} />
+
+      <EvidenceSection content={evidence} />
 
       <section id="za-koga" className="section-pad section-olive scroll-mt-24">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
@@ -862,6 +1005,9 @@ function App() {
             <p className="mt-6 text-lg leading-8 text-graphite-700">
               {contact.text}
             </p>
+            <p className="contact-closing mt-8 font-display text-xl leading-8 text-graphite-950">
+              {contact.closing}
+            </p>
             <div className="mt-8 grid gap-3 text-graphite-800">
               <a href={`mailto:${contact.email}`} className="contact-link">
                 <Mail size={20} />
@@ -905,6 +1051,7 @@ function App() {
       </section>
         </>
       )}
+      <TrustSignalSection />
       <Footer footer={footer} onCookieSettingsOpen={() => setCookieSettingsOpen(true)} />
       <CookieConsent
         content={cookies}

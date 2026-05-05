@@ -163,23 +163,37 @@ export const siteContent = {
 
   about: {
     eyebrow: 'O nama',
-    title: 'Poslovni sustavi ne nastaju slučajno. Oni se grade.',
-    paragraphs: [
-      'Radimo s tvrtkama koje žele prestati upravljati kroz improvizaciju i početi upravljati kroz sustav.',
-      'Fokus nije na dodatnim slojevima administracije, nego na jasnoći: tko odlučuje, što se prati i kako se posao stvarno vodi.',
-      'Rezultat nije “bolji osjećaj u poslovanju”, nego konkretna promjena: jasnije odgovornosti, bolji pregled i odluke koje se donose brže i sigurnije.',
+    title: 'O nama',
+    companyParagraphs: [
+      'OptiMAX Consulting nastao je iz dugogodišnjeg iskustva rada unutar kompleksnih poslovnih sustava, ali i iz razumijevanja stvarnih izazova s kojima se susreću tvrtke u fazi rasta.',
+      'Vjerujemo da uspješno poslovanje ne nastaje slučajno — ono je rezultat jasne strukture, odgovornosti, dosljednosti i sposobnosti da se poslovanje promatra dugoročno. Upravo zato OptiMAX okuplja pristup koji spaja operativno iskustvo, strateško razmišljanje i moderno razumijevanje poslovanja u vremenu brzih promjena.',
     ],
-    viewpointTitle: 'Kako gledamo na poslovanje',
-    highlights: [
-      'Sustav umjesto improvizacije',
-      'Jasnoća prije kompleksnosti',
-      'Podaci prije pretpostavki',
-      'Provedba prije strategije',
-    ],
-    closing: [
-      'Problem rijetko nastaje zbog ljudi.',
-      'Najčešće nastaje zbog sustava koji nije jasno postavljen.',
-    ],
+    founder: {
+      name: 'Jelena Bogović',
+      role: 'Founder & Business Architect',
+      paragraphs: [
+        'Iza OptiMAX Consulting pristupa stoji Jelena Bogović, poslovna savjetnica i poduzetnica s više od 20 godina iskustva rada kroz korporativni i privatni sektor, na operativnim, prodajnim, upravljačkim i strateškim pozicijama.',
+        'Tijekom karijere gradila je iskustvo kroz različite razine poslovanja — od direktnog rada s klijentima i vođenja poslovnica, do upravljanja prodajnom učinkovitošću, kvalitetom usluge i korisničkim iskustvom unutar međunarodnih sustava. Profesionalni razvoj uključuje i vodeće funkcije unutar bankarskog sektora te razvoj i upravljanje vlastitim poduzetničkim projektima i tvrtkama.',
+        'Pripada generaciji koja je odrasla u analognom svijetu, u vremenu u kojem su disciplina, odgovornost, radna etika i stvaranje vrijednosti bili temelj profesionalnog razvoja — a danas djeluje u digitalnom i AI okruženju koje mijenja način poslovanja gotovo svakodnevno.',
+        'Upravo iskustvo rada između ta dva potpuno različita svijeta donosi perspektivu koja danas postaje iznimno vrijedna: razumijevanje ljudi, sustava, operativne realnosti i potrebe da poslovanje ima jasnu strukturu, a ne samo brzinu.',
+        'Kroz više od dva desetljeća rada razvila je pristup koji poslovanje promatra kao cjelinu — povezani sustav ljudi, procesa i odgovornosti koji mora funkcionirati stabilno, održivo i predvidivo.',
+        'OptiMAX Consulting zato nije nastao kao teorijski koncept, već kao rezultat stvarnog iskustva rada u sustavima, upravljanja promjenama i svakodnevnog donošenja poslovnih odluka.',
+      ],
+      photo: {
+        src: '/assets/jelena-bogovic-corporate.jpg',
+        alt: 'Jelena Bogović, Founder & Business Architect',
+      },
+    },
+    principles: {
+      title: 'Način razmišljanja',
+      text: 'OptiMAX pristup poslovanje promatra kroz jasnoću, odgovornost i provedbu.',
+      items: [
+        'Sustav prije improvizacije',
+        'Jasnoća prije kompleksnosti',
+        'Podaci prije pretpostavki',
+        'Provedba prije strategije',
+      ],
+    },
   },
 
   expertise: {
@@ -256,10 +270,39 @@ export const siteContent = {
     ],
   },
 
+  evidence: {
+    eyebrow: 'Poslovni alati',
+    title: 'Što uvodimo u poslovanje',
+    text: 'Ne dodajemo sloj administracije. Uvodimo jasne alate koji pomažu vlasnicima i timovima vidjeti što je važno, tko je odgovoran i kako se napredak prati.',
+    items: [
+      {
+        title: 'KPI pregled',
+        text: 'Kratki upravljački pokazatelji koji daju jasnu sliku stanja poslovanja.',
+      },
+      {
+        title: 'Operativni briefing',
+        text: 'Dnevni, tjedni i mjesečni ritam komunikacije koji smanjuje improvizaciju.',
+      },
+      {
+        title: 'Procesna mapa',
+        text: 'Jasni tokovi rada, odgovornosti i točke odlučivanja.',
+      },
+      {
+        title: 'Matrica odgovornosti',
+        text: 'Pregled tko odlučuje, tko provodi i tko prati rezultat.',
+      },
+      {
+        title: 'Ritam praćenja',
+        text: 'Sustav kontrole koji ne opterećuje tim, nego održava fokus.',
+      },
+    ],
+  },
+
   contact: {
     eyebrow: 'Kontakt',
     title: 'Dogovorite poslovnu dijagnostiku',
     text: 'Pošaljite kratku poruku i otvorit ćemo razgovor o tome gdje sustav može donijeti najviše jasnoće.',
+    closing: 'Kad poslovanje preraste improvizaciju, vrijeme je za strukturu.',
     email: 'kontakt@optimax-consulting.hr',
     phone: '+385 98 501 011',
     phoneHref: 'tel:+38598501011',
@@ -294,6 +337,8 @@ export const siteContent = {
 
   footer: {
     companyName: 'OptiMAX Consulting',
+    positioning: 'POSLOVNA ARHITEKTURA',
+    text: 'Strukturiramo procese, odgovornosti i upravljački ritam za tvrtke koje žele više jasnoće, reda i kontrole.',
     rights: 'Sva prava pridržana.',
     group: {
       relation: 'OptiMAX Consulting je dio Barteni Grupe.',
